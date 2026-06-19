@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SEN at Cannes Lions 2026 | Social Executive Network</title>
+  <title>Brittany Baumgarten | Cannes Lions 2026 &#x2014; Social Executive Network</title>
   <meta
     name="description"
-    content="The Social Executive Network hub for Cannes Lions 2026 &#x2014; connecting retail, eCommerce, technology, and marketing leaders. Book a meeting, explore SEN, and connect during Cannes week."
+    content="Brittany Baumgarten, Founder of the Social Executive Network (SEN), at Cannes Lions 2026 &#x2014; connecting retail, commerce, marketing and technology leaders. Schedule a meeting, explore SEN events, and partner with SEN."
   />
 
-  <!-- Social share preview. Replace with the live hub URL + a branded share image once published. -->
-  <meta property="og:title" content="SEN at Cannes Lions 2026" />
-  <meta property="og:description" content="Connecting retail, eCommerce, technology, and marketing leaders at Cannes Lions 2026." />
+  <!-- Social share preview. REPLACE og:image with a branded 1200x630 share graphic. -->
+  <meta property="og:title" content="Brittany Baumgarten | Cannes Lions 2026" />
+  <meta property="og:description" content="Founder, Social Executive Network &#x2014; connecting retail, commerce, marketing & technology leaders at Cannes Lions 2026." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://sen-cannes-2026.vercel.app/" />
   <meta property="og:image" content="#replace-og-share-image" />
@@ -650,6 +650,61 @@ h1, h2, h3, h4 { margin: 0; line-height: 1.15; }
 .totop.show { opacity: 1; pointer-events: auto; transform: translateY(0); }
 
 /* ============================================================
+   Hub content components (Brittany / 8-section layout)
+   ============================================================ */
+.hero__role {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  font-size: clamp(1.05rem, 3.4vw, 1.5rem);
+  color: var(--terracotta);
+  margin: 0 0 14px;
+  text-shadow: 0 1px 10px rgba(25,25,36,.5);
+}
+
+.welcome { text-align: center; }
+.welcome__lead { font-size: 1.1rem; color: var(--ink); margin: 0 0 16px; }
+
+/* Event cards */
+.panel--event { display: flex; flex-direction: column; }
+.event__date {
+  font-size: .8rem; letter-spacing: .06em; text-transform: uppercase;
+  color: var(--terracotta); font-weight: 700; margin-bottom: 8px;
+}
+.event__body { color: var(--muted); font-size: .96rem; margin: 0 0 16px; flex: 1; }
+.event__body strong { color: var(--navy); }
+.event__link { color: var(--terracotta); font-weight: 600; font-size: .95rem; }
+.event__link:hover { color: var(--terracotta-d); }
+.panel--wide { max-width: 820px; margin: 18px auto 0; }
+.panel--wide .taglist--wrap { margin-top: 12px; }
+
+/* Four-up grid (Cannes meetings) */
+.quad-grid { display: grid; grid-template-columns: 1fr; gap: 16px; }
+.meetings__note {
+  text-align: center; margin: 28px auto 0; max-width: 560px;
+  font-size: .92rem; color: var(--muted);
+  background: var(--offwhite); border-radius: var(--radius-sm); padding: 14px 18px;
+}
+.meetings__note strong { color: var(--navy); }
+
+/* "soon" link pills */
+.link-pill--soon { opacity: .72; }
+.link-pill--soon em {
+  margin-left: auto; font-style: normal; font-size: .68rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: .06em; color: var(--terracotta);
+  background: rgba(184,115,80,.12); padding: 3px 8px; border-radius: 999px;
+}
+
+/* Cannes content feed */
+.feed-grid { display: grid; grid-template-columns: 1fr; gap: 12px; }
+.feed-card {
+  background: var(--white); border: 1px solid rgba(25,25,36,.1);
+  border-radius: var(--radius-sm); padding: 18px 20px;
+  box-shadow: var(--shadow-sm); display: grid; gap: 6px;
+}
+.feed-card__day { font-size: .78rem; letter-spacing: .08em; text-transform: uppercase; color: var(--terracotta); font-weight: 700; }
+.feed-card__topic { font-family: var(--font-serif); font-weight: 600; color: var(--navy); font-size: 1.05rem; }
+
+/* ============================================================
    Responsive &#x2014; tablet / desktop
    ============================================================ */
 @media (min-width: 620px) {
@@ -660,6 +715,8 @@ h1, h2, h3, h4 { margin: 0; line-height: 1.15; }
   .legends { grid-template-columns: 1fr 1fr; }
   .feature__cols { grid-template-columns: 1fr 1fr; }
   .link-grid { grid-template-columns: 1fr 1fr; }
+  .quad-grid { grid-template-columns: 1fr 1fr; }
+  .feed-grid { grid-template-columns: 1fr 1fr; }
 }
 
 @media (min-width: 900px) {
@@ -668,6 +725,8 @@ h1, h2, h3, h4 { margin: 0; line-height: 1.15; }
   .nav__toggle { display: none; }
   .nav__mobile { display: none; }
   .cta-grid { grid-template-columns: repeat(4, 1fr); }
+  .quad-grid { grid-template-columns: repeat(4, 1fr); }
+  .feed-grid { grid-template-columns: repeat(5, 1fr); }
   .stack-grid { grid-template-columns: repeat(5, 1fr); }
   .qr { grid-template-columns: 220px 1fr; align-items: center; padding: 40px 40px; }
   .qr__code { justify-content: flex-start; }
@@ -689,270 +748,351 @@ h1, h2, h3, h4 { margin: 0; line-height: 1.15; }
   <!-- ============================ STICKY NAV ============================ -->
   <header class="nav" id="top">
     <div class="nav__inner">
-      <a class="nav__brand" href="#top" aria-label="SEN Cannes 2026 Hub home">
+      <a class="nav__brand" href="#top" aria-label="SEN Cannes 2026 home">
         <img class="nav__logo" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjY1IiBoZWlnaHQ9IjYyMCIgdmlld0JveD0iMCAwIDY2NSA2MjAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTUwLjUwMSAxMDAuNjU3QzE3MC4wNTEgMTAwLjY1NyAxODUuODI5IDEwMy4wNTkgMTk3LjgzMyAxMDcuODZDMjA5LjgzNyAxMTIuNjYyIDIxOS4yNjkgMTE4LjY2NSAyMjYuMTI5IDEyNS44NjdDMjMyLjk4OCAxMzIuNzI3IDIzNy43OSAxMzkuOTI5IDI0MC41MzQgMTQ3LjQ3NUMyNDMuNjIxIDE1NC42NzcgMjQ1LjY3OSAxNjAuODUxIDI0Ni43MDggMTY1Ljk5NkMyNDguMDggMTcxLjgyNyAyNDYuMzY1IDE3Ni45NzIgMjQxLjU2NCAxODEuNDMxQzIzNi43NjIgMTg1LjU0NiAyMzEuMTAzIDE4Ni45MTkgMjI0LjU4NiAxODUuNTQ3QzIyNC4yNDMgMTg1LjU0NyAyMjQuMDcxIDE4My44MzEgMjI0LjA3MSAxODAuNDAxQzIyNC4wNzEgMTc2LjYyOSAyMjMuMzg2IDE3MS45OTggMjIyLjAxNCAxNjYuNTExQzIyMC45ODUgMTYxLjAyMyAyMTkuMDk4IDE1NS4wMjEgMjE2LjM1NSAxNDguNTA0QzIxMy42MTEgMTQxLjk4NyAyMDkuNDk1IDEzNS45ODUgMjA0LjAwNyAxMzAuNDk3QzE5OC44NjIgMTI1LjAwOSAxOTEuODMxIDEyMC41NTEgMTgyLjkxMyAxMTcuMTIxQzE3My45OTUgMTEzLjM0OCAxNjIuODQ4IDExMS40NjIgMTQ5LjQ3MiAxMTEuNDYyQzEzNy44MSAxMTEuNDYyIDEyNy44NjMgMTEzLjE3NyAxMTkuNjMyIDExNi42MDZDMTExLjQgMTIwLjAzNiAxMDQuODg0IDEyNC42NjYgMTAwLjA4MiAxMzAuNDk3Qzk1LjI4MDMgMTM1Ljk4NSA5Mi4wMjE2IDE0Mi41MDIgOTAuMzA2NyAxNTAuMDQ4Qzg4LjkzNDggMTU3LjU5MyA4OS4yNzgyIDE2NS42NTMgOTEuMzM2IDE3NC4yMjhDOTMuNzM2OSAxODUuNTQ2IDk5LjU2NzYgMTk1LjE1IDEwOC44MjggMjAzLjAzOUMxMTguMDg5IDIxMC41ODUgMTI4Ljg5MyAyMTcuNDQ0IDE0MS4yNCAyMjMuNjE4QzE1My41ODggMjI5LjQ0OSAxNjYuNjIxIDIzNS4xMDggMTgwLjM0MSAyNDAuNTk2QzE5NC4wNiAyNDYuMDgzIDIwNi41NzkgMjUyLjQyOSAyMTcuODk3IDI1OS42MzJDMjI5LjU1OSAyNjYuNDkyIDIzOS4xNjIgMjc1LjA2NiAyNDYuNzA4IDI4NS4zNTVDMjUwLjc5IDI5MC43MzYgMjUzLjc2NiAyOTYuODIgMjU1LjY0IDMwMy42MDZWMjE0LjIwMkgzNzYuNDc1VjIyNi4wMzVIMjU4LjIxMkMyNjguNTAxIDIyNi43MjEgMjc3LjI0OCAyMzAuODM3IDI4NC40NSAyMzguMzgzQzI5MS42NTMgMjQ1LjU4NSAyOTUuMjU0IDI1NC4zMzIgMjk1LjI1NCAyNjQuNjIxVjM1NS4xNjlIMzc0LjU2NFYzNjcuMDAySDI1OC4yMTJDMjY4LjUwMSAzNjcuMzQ1IDI3Ny4yNDggMzcxLjI4OSAyODQuNDUgMzc4LjgzNUMyOTEuNjUzIDM4Ni4wMzggMjk1LjI1NCAzOTQuNzg1IDI5NS4yNTQgNDA1LjA3NFY1MDguNDg0SDQwOC4yNjNWMjgxLjg0M0g0MzIuNDQzQzQ1Ny44MjQgMzExLjY4MyA0ODIuMzQ4IDM0MC42NjUgNTA2LjAxNCAzNjguNzlDNTE2LjMwMyAzODAuNzk0IDUyNi43NjUgMzkzLjE0MiA1MzcuMzk4IDQwNS44MzJDNTQ4LjM3MyA0MTguNTIyIDU1OS4wMDUgNDMxLjA0MSA1NjkuMjk1IDQ0My4zODlDNTc5LjU4NCA0NTUuNzM2IDU4OS4zNiA0NjcuNTY5IDU5OC42MiA0NzguODg4QzYwOC4yMjQgNDg5Ljg2MyA2MTYuNjI3IDQ5OS44MSA2MjMuODMgNTA4LjcyOEM2MzIuNzQ4IDUxOS4zNiA2MzkuNjA3IDUzMS4xOTMgNjQ0LjQwOSA1NDQuMjI3QzY0OS41NTQgNTU3LjI2IDY1Mi40NjkgNTcwLjgwOCA2NTMuMTU1IDU4NC44N1YyODEuODQzSDY2NC45ODhWNTg3Ljk1N0g2NDAuODA4QzYxNS4wODQgNTU3LjQzMSA1OTAuMjE3IDUyNy45MzUgNTY2LjIwOCA0OTkuNDY3QzU1NS45MTkgNDg3LjExOSA1NDUuMjg2IDQ3NC42MDEgNTM0LjMxMSA0NjEuOTFDNTIzLjY3OCA0NDguODc3IDUxMy4wNDYgNDM2LjE4NiA1MDIuNDEzIDQyMy44MzlDNDkyLjEyNCA0MTEuMTQ4IDQ4Mi4xNzcgMzk5LjMxNSA0NzIuNTczIDM4OC4zNEM0NjMuMzEzIDM3Ny4wMjEgNDU1LjA4MSAzNjcuMDc1IDQ0Ny44NzggMzU4LjVDNDMwLjM4NiAzMzcuMjM1IDQyMS4xMjUgMzEzLjA1NSA0MjAuMDk2IDI4NS45NTlWNTc4LjE5MUM0MjAuMTA3IDU3OC4xODYgNDIwLjExOSA1NzguMTgxIDQyMC4xMyA1NzguMTc2VjU5NC4zMjZDNDE2LjE3IDU5Ni4wNDUgNDEyLjE4IDU5Ny42NzYgNDA4LjE2MyA1OTkuMjE4VjU4My4zNjZDNDA4LjE5NiA1ODMuMzUzIDQwOC4yMjkgNTgzLjMzOSA0MDguMjYzIDU4My4zMjVWNTIwLjMxN0gyNTUuNjRWMzQxLjUxN0MyNTQuNDY3IDM0Ni4yNiAyNTIuODYzIDM1MS4wMzQgMjUwLjgyNCAzNTUuODM5QzI0Ni4zNjUgMzY2LjgxNCAyMzkuNjc3IDM3Ni43NjEgMjMwLjc2IDM4NS42NzlDMjIxLjg0MiAzOTQuNTk2IDIxMC44NjYgNDAxLjk3IDE5Ny44MzMgNDA3LjgwMUMxODQuOCA0MTMuMjg5IDE2OS43MDggNDE2LjAzMyAxNTIuNTU5IDQxNi4wMzNDMTM0LjM4IDQxNi4wMzMgMTE4LjYwMyA0MTMuOTc1IDEwNS4yMjcgNDA5Ljg1OUM5Mi4xOTMzIDQwNS40MDEgODEuMDQ2NyA0MDAuMDg0IDcxLjc4NjIgMzkzLjkxQzYyLjg2ODYgMzg3LjczNiA1NS42NjU1IDM4MS4yMiA1MC4xNzc4IDM3NC4zNkM0NC42OSAzNjcuMTU4IDQwLjc0NTcgMzYwLjgxMiAzOC4zNDQ4IDM1NS4zMjRDMzcuMzE1OSAzNTIuOTIzIDM2Ljk3MjUgMzUwLjM1MSAzNy4zMTU1IDM0Ny42MDdDMzguMDAxNCAzNDQuODY0IDM5LjAzMDQgMzQyLjI5MSA0MC40MDI0IDMzOS44OUM0Mi4xMTczIDMzNy4xNDYgNDQuMzQ3IDMzNS4wODggNDcuMDkwOSAzMzMuNzE2QzQ5LjgzNDcgMzMyLjAwMSA1My4wOTM1IDMzMS4zMTUgNTYuODY2MiAzMzEuNjU4QzU5LjYxMDEgMzQ1LjM3OCA2NC45MjU4IDM1Ny43MjYgNzIuODE0NSAzNjguNzAxQzc5LjMzMTIgMzc3Ljk2MiA4OC43NjM5IDM4Ni41MzYgMTAxLjExMSAzOTQuNDI1QzExMy40NTkgNDAxLjk3IDEyOS45MjIgNDA1Ljc0MyAxNTAuNTAxIDQwNS43NDNDMTYyLjg0OCA0MDUuNzQzIDE3My44MjQgNDAzLjUxMyAxODMuNDI4IDM5OS4wNTVDMTkzLjM3NCAzOTQuMjUzIDIwMS40MzUgMzg4LjA4IDIwNy42MDggMzgwLjUzNEMyMTMuNzgyIDM3Mi45ODggMjE3LjcyNyAzNjQuNTg1IDIxOS40NDEgMzU1LjMyNEMyMjEuNDk5IDM0NS43MjEgMjIwLjk4NCAzMzYuMTE3IDIxNy44OTcgMzI2LjUxNEMyMTQuODExIDMxNi41NjcgMjA4LjQ2NiAzMDguMTYzIDE5OC44NjIgMzAxLjMwNEMxODkuMjU5IDI5NC40NDQgMTc4LjExMSAyODguMDk5IDE2NS40MjEgMjgyLjI2OUMxNTMuMDczIDI3Ni40MzggMTQwLjA0IDI3MC42MDcgMTI2LjMyIDI2NC43NzZDMTEyLjk0NCAyNTguOTQ2IDEwMC40MjUgMjUyLjI1OCA4OC43NjM3IDI0NC43MTJDNzcuNDQ1MiAyMzYuODIzIDY4LjAxMjUgMjI3LjczNCA2MC40NjY4IDIxNy40NDRDNTMuNjQ1NiAyMDcuNyA1MC4wNTY2IDE5NS44MDEgNDkuNjk1MyAxODEuNzVDMjcuODczIDIyMS43MTYgMTUuNzgyNSAyNjYuNTczIDE0LjgwNjcgMzEyLjY0M0MxMy40MjkgMzc3LjY5IDM0LjI5MTMgNDQxLjI2IDczLjk0NDQgNDkyLjg0MkMxMTMuNTk4IDU0NC40MjQgMTY5LjY2NyA1ODAuOTMgMjMyLjg4MiA1OTYuMzIyQzI4NC4xMTcgNjA4Ljc5OCAzMzcuNTYgNjA2Ljc5NyAzODcuMzUgNTkwLjkwOFY2MDYuMzQ1QzMzNi4yNzQgNjIxLjc2OSAyODEuNzM5IDYyMy4zOTEgMjI5LjM5NSA2MTAuNjQ2QzE2Mi45MTggNTk0LjQ1OSAxMDMuOTU2IDU1Ni4wNyA2Mi4yNTY5IDUwMS44MjdDMjAuNTU3OSA0NDcuNTg0IC0xLjM4MTM4IDM4MC43MzQgMC4wNjc0MTg0IDMxMi4zM0MxLjQwNjg3IDI0OS4wOTQgMjIuNjU5MyAxODguMDMxIDYwLjU5MTggMTM3Ljc0NEM2My4xNjU5IDEzNC4zMzIgNjUuMDQ2MyAxMzEuODc0IDY2LjY3ODcgMTMwLjMyMUM2OS44Mjk4IDEyNi44MyA3My40MTkgMTIzLjYzIDc3LjQ0NTQgMTIwLjcyMkM5NS45NjY1IDEwNy4zNDUgMTIwLjMxOSAxMDAuNjU3IDE1MC41MDEgMTAwLjY1N1pNNTU2Ljc0MyAxNTYuOTYyQzU3OC4yOTUgMTU2Ljk2MiA1OTUuNzY3IDE3NC40MzMgNTk1Ljc2OCAxOTUuOTg1QzU5NS43NjggMjE3LjUzOCA1NzguMjk1IDIzNS4wMSA1NTYuNzQzIDIzNS4wMUM1MzUuMTkxIDIzNS4wMSA1MTcuNzIgMjE3LjUzNyA1MTcuNzIgMTk1Ljk4NUM1MTcuNzIgMTc0LjQzNCA1MzUuMTkxIDE1Ni45NjIgNTU2Ljc0MyAxNTYuOTYyWk00NDkuMjEyIDQ0LjIyNzVDNDYzLjU4IDQ0LjIyNzUgNDc1LjIyOCA1NS44NzUgNDc1LjIyOCA3MC4yNDMyQzQ3NS4yMjcgODQuNjExMiA0NjMuNTggOTYuMjU4OCA0NDkuMjEyIDk2LjI1ODhDNDM0Ljg0NCA5Ni4yNTg3IDQyMy4xOTYgODQuNjExMiA0MjMuMTk2IDcwLjI0MzJDNDIzLjE5NiA1NS44NzUxIDQzNC44NDQgNDQuMjI3NiA0NDkuMjEyIDQ0LjIyNzVaTTMxNi45NzkgMEMzMjYuMzE4IDAgMzMzLjg4OSA3LjU3MDkyIDMzMy44ODkgMTYuOTEwMkMzMzMuODg5IDI2LjI0OTQgMzI2LjMxOCAzMy44MjAzIDMxNi45NzkgMzMuODIwM0MzMDcuNjM5IDMzLjgyMDEgMzAwLjA2OCAyNi4yNDkzIDMwMC4wNjggMTYuOTEwMkMzMDAuMDY4IDcuNTcxMDQgMzA3LjYzOSAwLjAwMDE5NDgzMSAzMTYuOTc5IDBaIiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4K" alt="SEN" width="34" height="32" />
         <span class="nav__brandtext">Cannes&nbsp;2026</span>
       </a>
 
       <nav class="nav__links" aria-label="Primary">
         <a href="#schedule">Schedule</a>
-        <a href="#links">SEN Links</a>
-        <a href="#opportunities">Opportunities</a>
+        <a href="#about">About SEN</a>
+        <a href="#events">Events</a>
+        <a href="#meetings">Meet</a>
+        <a href="#partnerships">Partner</a>
       </nav>
 
-      <a href="https://www.socialexec.co/contact" class="btn btn--sm btn--primary nav__cta">Book a Meeting</a>
+      <!-- REPLACE with Calendly link -->
+      <a href="https://www.socialexec.co/contact" class="btn btn--sm btn--primary nav__cta">Schedule Time</a>
 
       <button class="nav__toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
         <span></span><span></span><span></span>
       </button>
     </div>
 
-    <!-- Mobile dropdown menu -->
     <nav class="nav__mobile" id="mobileMenu" aria-label="Mobile">
-      <a href="#schedule">Cannes Schedule</a>
-      <a href="#links">SEN Quick Links</a>
-      <a href="#opportunities">Current Opportunities</a>
-      <a href="#qr">Scan to Share</a>
-      <a href="https://www.socialexec.co/contact" class="btn btn--primary btn--block">Book a Meeting</a>
+      <a href="#welcome">Welcome</a>
+      <a href="#schedule">Schedule Time</a>
+      <a href="#about">About SEN</a>
+      <a href="#events">Upcoming Events</a>
+      <a href="#meetings">Cannes Meetings</a>
+      <a href="#partnerships">Partnerships</a>
+      <a href="#follow">Follow SEN</a>
+      <a href="https://www.socialexec.co/contact" class="btn btn--primary btn--block">Schedule Time</a>
     </nav>
   </header>
 
   <main>
     <!-- ============================ HERO ============================ -->
     <section class="hero" id="hero">
-      <!-- Cannes Riviera artwork (SEN brand colors). Swap for a photo by replacing
-           cannes-hero.svg or updating the background-image in styles.css (.hero). -->
       <div class="hero__scene" aria-hidden="true"></div>
       <div class="hero__scrim" aria-hidden="true"></div>
       <div class="hero__glow" aria-hidden="true"></div>
       <div class="container hero__inner">
-        <!-- SEN brand lockup -->
         <a class="hero__brand" href="https://www.socialexec.co/" aria-label="Social Executive Network">
           <img class="hero__brand-mark" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjY1IiBoZWlnaHQ9IjYyMCIgdmlld0JveD0iMCAwIDY2NSA2MjAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTUwLjUwMSAxMDAuNjU3QzE3MC4wNTEgMTAwLjY1NyAxODUuODI5IDEwMy4wNTkgMTk3LjgzMyAxMDcuODZDMjA5LjgzNyAxMTIuNjYyIDIxOS4yNjkgMTE4LjY2NSAyMjYuMTI5IDEyNS44NjdDMjMyLjk4OCAxMzIuNzI3IDIzNy43OSAxMzkuOTI5IDI0MC41MzQgMTQ3LjQ3NUMyNDMuNjIxIDE1NC42NzcgMjQ1LjY3OSAxNjAuODUxIDI0Ni43MDggMTY1Ljk5NkMyNDguMDggMTcxLjgyNyAyNDYuMzY1IDE3Ni45NzIgMjQxLjU2NCAxODEuNDMxQzIzNi43NjIgMTg1LjU0NiAyMzEuMTAzIDE4Ni45MTkgMjI0LjU4NiAxODUuNTQ3QzIyNC4yNDMgMTg1LjU0NyAyMjQuMDcxIDE4My44MzEgMjI0LjA3MSAxODAuNDAxQzIyNC4wNzEgMTc2LjYyOSAyMjMuMzg2IDE3MS45OTggMjIyLjAxNCAxNjYuNTExQzIyMC45ODUgMTYxLjAyMyAyMTkuMDk4IDE1NS4wMjEgMjE2LjM1NSAxNDguNTA0QzIxMy42MTEgMTQxLjk4NyAyMDkuNDk1IDEzNS45ODUgMjA0LjAwNyAxMzAuNDk3QzE5OC44NjIgMTI1LjAwOSAxOTEuODMxIDEyMC41NTEgMTgyLjkxMyAxMTcuMTIxQzE3My45OTUgMTEzLjM0OCAxNjIuODQ4IDExMS40NjIgMTQ5LjQ3MiAxMTEuNDYyQzEzNy44MSAxMTEuNDYyIDEyNy44NjMgMTEzLjE3NyAxMTkuNjMyIDExNi42MDZDMTExLjQgMTIwLjAzNiAxMDQuODg0IDEyNC42NjYgMTAwLjA4MiAxMzAuNDk3Qzk1LjI4MDMgMTM1Ljk4NSA5Mi4wMjE2IDE0Mi41MDIgOTAuMzA2NyAxNTAuMDQ4Qzg4LjkzNDggMTU3LjU5MyA4OS4yNzgyIDE2NS42NTMgOTEuMzM2IDE3NC4yMjhDOTMuNzM2OSAxODUuNTQ2IDk5LjU2NzYgMTk1LjE1IDEwOC44MjggMjAzLjAzOUMxMTguMDg5IDIxMC41ODUgMTI4Ljg5MyAyMTcuNDQ0IDE0MS4yNCAyMjMuNjE4QzE1My41ODggMjI5LjQ0OSAxNjYuNjIxIDIzNS4xMDggMTgwLjM0MSAyNDAuNTk2QzE5NC4wNiAyNDYuMDgzIDIwNi41NzkgMjUyLjQyOSAyMTcuODk3IDI1OS42MzJDMjI5LjU1OSAyNjYuNDkyIDIzOS4xNjIgMjc1LjA2NiAyNDYuNzA4IDI4NS4zNTVDMjUwLjc5IDI5MC43MzYgMjUzLjc2NiAyOTYuODIgMjU1LjY0IDMwMy42MDZWMjE0LjIwMkgzNzYuNDc1VjIyNi4wMzVIMjU4LjIxMkMyNjguNTAxIDIyNi43MjEgMjc3LjI0OCAyMzAuODM3IDI4NC40NSAyMzguMzgzQzI5MS42NTMgMjQ1LjU4NSAyOTUuMjU0IDI1NC4zMzIgMjk1LjI1NCAyNjQuNjIxVjM1NS4xNjlIMzc0LjU2NFYzNjcuMDAySDI1OC4yMTJDMjY4LjUwMSAzNjcuMzQ1IDI3Ny4yNDggMzcxLjI4OSAyODQuNDUgMzc4LjgzNUMyOTEuNjUzIDM4Ni4wMzggMjk1LjI1NCAzOTQuNzg1IDI5NS4yNTQgNDA1LjA3NFY1MDguNDg0SDQwOC4yNjNWMjgxLjg0M0g0MzIuNDQzQzQ1Ny44MjQgMzExLjY4MyA0ODIuMzQ4IDM0MC42NjUgNTA2LjAxNCAzNjguNzlDNTE2LjMwMyAzODAuNzk0IDUyNi43NjUgMzkzLjE0MiA1MzcuMzk4IDQwNS44MzJDNTQ4LjM3MyA0MTguNTIyIDU1OS4wMDUgNDMxLjA0MSA1NjkuMjk1IDQ0My4zODlDNTc5LjU4NCA0NTUuNzM2IDU4OS4zNiA0NjcuNTY5IDU5OC42MiA0NzguODg4QzYwOC4yMjQgNDg5Ljg2MyA2MTYuNjI3IDQ5OS44MSA2MjMuODMgNTA4LjcyOEM2MzIuNzQ4IDUxOS4zNiA2MzkuNjA3IDUzMS4xOTMgNjQ0LjQwOSA1NDQuMjI3QzY0OS41NTQgNTU3LjI2IDY1Mi40NjkgNTcwLjgwOCA2NTMuMTU1IDU4NC44N1YyODEuODQzSDY2NC45ODhWNTg3Ljk1N0g2NDAuODA4QzYxNS4wODQgNTU3LjQzMSA1OTAuMjE3IDUyNy45MzUgNTY2LjIwOCA0OTkuNDY3QzU1NS45MTkgNDg3LjExOSA1NDUuMjg2IDQ3NC42MDEgNTM0LjMxMSA0NjEuOTFDNTIzLjY3OCA0NDguODc3IDUxMy4wNDYgNDM2LjE4NiA1MDIuNDEzIDQyMy44MzlDNDkyLjEyNCA0MTEuMTQ4IDQ4Mi4xNzcgMzk5LjMxNSA0NzIuNTczIDM4OC4zNEM0NjMuMzEzIDM3Ny4wMjEgNDU1LjA4MSAzNjcuMDc1IDQ0Ny44NzggMzU4LjVDNDMwLjM4NiAzMzcuMjM1IDQyMS4xMjUgMzEzLjA1NSA0MjAuMDk2IDI4NS45NTlWNTc4LjE5MUM0MjAuMTA3IDU3OC4xODYgNDIwLjExOSA1NzguMTgxIDQyMC4xMyA1NzguMTc2VjU5NC4zMjZDNDE2LjE3IDU5Ni4wNDUgNDEyLjE4IDU5Ny42NzYgNDA4LjE2MyA1OTkuMjE4VjU4My4zNjZDNDA4LjE5NiA1ODMuMzUzIDQwOC4yMjkgNTgzLjMzOSA0MDguMjYzIDU4My4zMjVWNTIwLjMxN0gyNTUuNjRWMzQxLjUxN0MyNTQuNDY3IDM0Ni4yNiAyNTIuODYzIDM1MS4wMzQgMjUwLjgyNCAzNTUuODM5QzI0Ni4zNjUgMzY2LjgxNCAyMzkuNjc3IDM3Ni43NjEgMjMwLjc2IDM4NS42NzlDMjIxLjg0MiAzOTQuNTk2IDIxMC44NjYgNDAxLjk3IDE5Ny44MzMgNDA3LjgwMUMxODQuOCA0MTMuMjg5IDE2OS43MDggNDE2LjAzMyAxNTIuNTU5IDQxNi4wMzNDMTM0LjM4IDQxNi4wMzMgMTE4LjYwMyA0MTMuOTc1IDEwNS4yMjcgNDA5Ljg1OUM5Mi4xOTMzIDQwNS40MDEgODEuMDQ2NyA0MDAuMDg0IDcxLjc4NjIgMzkzLjkxQzYyLjg2ODYgMzg3LjczNiA1NS42NjU1IDM4MS4yMiA1MC4xNzc4IDM3NC4zNkM0NC42OSAzNjcuMTU4IDQwLjc0NTcgMzYwLjgxMiAzOC4zNDQ4IDM1NS4zMjRDMzcuMzE1OSAzNTIuOTIzIDM2Ljk3MjUgMzUwLjM1MSAzNy4zMTU1IDM0Ny42MDdDMzguMDAxNCAzNDQuODY0IDM5LjAzMDQgMzQyLjI5MSA0MC40MDI0IDMzOS44OUM0Mi4xMTczIDMzNy4xNDYgNDQuMzQ3IDMzNS4wODggNDcuMDkwOSAzMzMuNzE2QzQ5LjgzNDcgMzMyLjAwMSA1My4wOTM1IDMzMS4zMTUgNTYuODY2MiAzMzEuNjU4QzU5LjYxMDEgMzQ1LjM3OCA2NC45MjU4IDM1Ny43MjYgNzIuODE0NSAzNjguNzAxQzc5LjMzMTIgMzc3Ljk2MiA4OC43NjM5IDM4Ni41MzYgMTAxLjExMSAzOTQuNDI1QzExMy40NTkgNDAxLjk3IDEyOS45MjIgNDA1Ljc0MyAxNTAuNTAxIDQwNS43NDNDMTYyLjg0OCA0MDUuNzQzIDE3My44MjQgNDAzLjUxMyAxODMuNDI4IDM5OS4wNTVDMTkzLjM3NCAzOTQuMjUzIDIwMS40MzUgMzg4LjA4IDIwNy42MDggMzgwLjUzNEMyMTMuNzgyIDM3Mi45ODggMjE3LjcyNyAzNjQuNTg1IDIxOS40NDEgMzU1LjMyNEMyMjEuNDk5IDM0NS43MjEgMjIwLjk4NCAzMzYuMTE3IDIxNy44OTcgMzI2LjUxNEMyMTQuODExIDMxNi41NjcgMjA4LjQ2NiAzMDguMTYzIDE5OC44NjIgMzAxLjMwNEMxODkuMjU5IDI5NC40NDQgMTc4LjExMSAyODguMDk5IDE2NS40MjEgMjgyLjI2OUMxNTMuMDczIDI3Ni40MzggMTQwLjA0IDI3MC42MDcgMTI2LjMyIDI2NC43NzZDMTEyLjk0NCAyNTguOTQ2IDEwMC40MjUgMjUyLjI1OCA4OC43NjM3IDI0NC43MTJDNzcuNDQ1MiAyMzYuODIzIDY4LjAxMjUgMjI3LjczNCA2MC40NjY4IDIxNy40NDRDNTMuNjQ1NiAyMDcuNyA1MC4wNTY2IDE5NS44MDEgNDkuNjk1MyAxODEuNzVDMjcuODczIDIyMS43MTYgMTUuNzgyNSAyNjYuNTczIDE0LjgwNjcgMzEyLjY0M0MxMy40MjkgMzc3LjY5IDM0LjI5MTMgNDQxLjI2IDczLjk0NDQgNDkyLjg0MkMxMTMuNTk4IDU0NC40MjQgMTY5LjY2NyA1ODAuOTMgMjMyLjg4MiA1OTYuMzIyQzI4NC4xMTcgNjA4Ljc5OCAzMzcuNTYgNjA2Ljc5NyAzODcuMzUgNTkwLjkwOFY2MDYuMzQ1QzMzNi4yNzQgNjIxLjc2OSAyODEuNzM5IDYyMy4zOTEgMjI5LjM5NSA2MTAuNjQ2QzE2Mi45MTggNTk0LjQ1OSAxMDMuOTU2IDU1Ni4wNyA2Mi4yNTY5IDUwMS44MjdDMjAuNTU3OSA0NDcuNTg0IC0xLjM4MTM4IDM4MC43MzQgMC4wNjc0MTg0IDMxMi4zM0MxLjQwNjg3IDI0OS4wOTQgMjIuNjU5MyAxODguMDMxIDYwLjU5MTggMTM3Ljc0NEM2My4xNjU5IDEzNC4zMzIgNjUuMDQ2MyAxMzEuODc0IDY2LjY3ODcgMTMwLjMyMUM2OS44Mjk4IDEyNi44MyA3My40MTkgMTIzLjYzIDc3LjQ0NTQgMTIwLjcyMkM5NS45NjY1IDEwNy4zNDUgMTIwLjMxOSAxMDAuNjU3IDE1MC41MDEgMTAwLjY1N1pNNTU2Ljc0MyAxNTYuOTYyQzU3OC4yOTUgMTU2Ljk2MiA1OTUuNzY3IDE3NC40MzMgNTk1Ljc2OCAxOTUuOTg1QzU5NS43NjggMjE3LjUzOCA1NzguMjk1IDIzNS4wMSA1NTYuNzQzIDIzNS4wMUM1MzUuMTkxIDIzNS4wMSA1MTcuNzIgMjE3LjUzNyA1MTcuNzIgMTk1Ljk4NUM1MTcuNzIgMTc0LjQzNCA1MzUuMTkxIDE1Ni45NjIgNTU2Ljc0MyAxNTYuOTYyWk00NDkuMjEyIDQ0LjIyNzVDNDYzLjU4IDQ0LjIyNzUgNDc1LjIyOCA1NS44NzUgNDc1LjIyOCA3MC4yNDMyQzQ3NS4yMjcgODQuNjExMiA0NjMuNTggOTYuMjU4OCA0NDkuMjEyIDk2LjI1ODhDNDM0Ljg0NCA5Ni4yNTg3IDQyMy4xOTYgODQuNjExMiA0MjMuMTk2IDcwLjI0MzJDNDIzLjE5NiA1NS44NzUxIDQzNC44NDQgNDQuMjI3NiA0NDkuMjEyIDQ0LjIyNzVaTTMxNi45NzkgMEMzMjYuMzE4IDAgMzMzLjg4OSA3LjU3MDkyIDMzMy44ODkgMTYuOTEwMkMzMzMuODg5IDI2LjI0OTQgMzI2LjMxOCAzMy44MjAzIDMxNi45NzkgMzMuODIwM0MzMDcuNjM5IDMzLjgyMDEgMzAwLjA2OCAyNi4yNDkzIDMwMC4wNjggMTYuOTEwMkMzMDAuMDY4IDcuNTcxMDQgMzA3LjYzOSAwLjAwMDE5NDgzMSAzMTYuOTc5IDBaIiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4K" alt="" width="72" height="67" />
           <span class="hero__brand-word">Social Executive Network</span>
         </a>
         <p class="hero__eyebrow">&#x1F4CD; Cannes Lions 2026 &#xB7; June 22&#x2013;26 &#xB7; C&#xF4;te d'Azur</p>
-        <h1 class="hero__title">Cannes Lions 2026</h1>
+        <h1 class="hero__title">Brittany Baumgarten</h1>
+        <p class="hero__role">Founder, Social Executive Network (SEN)</p>
         <p class="hero__lede">
-          Connecting retail, eCommerce, technology &amp; marketing leaders.
-          One link for every conversation you start in Cannes.
+          Connecting Retail, Commerce, Marketing &amp; Technology leaders.
+          One link to meet, partner, and explore SEN at Cannes.
         </p>
         <div class="hero__actions">
-          <a href="https://www.socialexec.co/contact" class="btn btn--primary">&#x1F3AF; Book a Meeting</a>
-          <a href="#schedule" class="btn btn--ghost btn--ghost-light">View My Availability</a>
+          <!-- REPLACE with Calendly link -->
+          <a href="https://www.socialexec.co/contact" class="btn btn--primary">&#x1F5D3;&#xFE0F; Schedule Time</a>
+          <a href="#about" class="btn btn--ghost btn--ghost-light">About SEN</a>
         </div>
 
-        <!-- Copy hub link -->
         <div class="hero__copy">
           <button class="copylink" id="copyLink" type="button" aria-live="polite">
             <span class="copylink__icon" aria-hidden="true">&#x1F517;</span>
             <span class="copylink__label">Copy hub link</span>
           </button>
-          <span class="hero__hosted">Hosted by the Social Executive Network</span>
+          <span class="hero__hosted">Cannes Lions 2026 &#xB7; Social Executive Network</span>
         </div>
       </div>
     </section>
 
-    <!-- ============================ FEATURED CTAs ============================ -->
-    <section class="section section--tight" id="featured" aria-labelledby="featured-h">
-      <div class="container">
-        <h2 class="section__title" id="featured-h">Start Here</h2>
-        <p class="section__sub">Four ways to connect with SEN during Cannes week.</p>
-
-        <div class="cta-grid">
-          <!-- REPLACE: Calendly meeting-booking link -->
-          <a class="cta-card" href="https://www.socialexec.co/contact">
-            <span class="cta-card__icon">&#x1F3AF;</span>
-            <span class="cta-card__title">Book a Meeting</span>
-            <span class="cta-card__desc">Grab time on the Cannes calendar via Calendly.</span>
-            <span class="cta-card__arrow" aria-hidden="true">&#x2192;</span>
-          </a>
-
-          <!-- REPLACE: SEN membership application link -->
-          <a class="cta-card" href="https://www.socialexec.co/community/join">
-            <span class="cta-card__icon">&#x1F91D;</span>
-            <span class="cta-card__title">Join SEN</span>
-            <span class="cta-card__desc">Apply for membership to the Social Executive Network.</span>
-            <span class="cta-card__arrow" aria-hidden="true">&#x2192;</span>
-          </a>
-
-          <!-- REPLACE: Speaker application link -->
-          <a class="cta-card" href="https://www.socialexec.co/contact">
-            <span class="cta-card__icon">&#x1F3A4;</span>
-            <span class="cta-card__title">Apply to Speak</span>
-            <span class="cta-card__desc">LinkedIn Legends, Retail Legends &amp; SEN executive events.</span>
-            <span class="cta-card__arrow" aria-hidden="true">&#x2192;</span>
-          </a>
-
-          <!-- REPLACE: Sponsorship interest link -->
-          <a class="cta-card" href="https://www.socialexec.co/partnerships">
-            <span class="cta-card__icon">&#x1F4A1;</span>
-            <span class="cta-card__title">Sponsor Opportunities</span>
-            <span class="cta-card__desc">SEN events, Retail Legends, executive dinners &amp; expos.</span>
-            <span class="cta-card__arrow" aria-hidden="true">&#x2192;</span>
-          </a>
+    <!-- ============================ 1 &#xB7; WELCOME ============================ -->
+    <section class="section section--tight" id="welcome" aria-labelledby="welcome-h">
+      <div class="container container--narrow welcome">
+        <h2 class="section__title" id="welcome-h">Welcome</h2>
+        <p class="welcome__lead">
+          Welcome to my Cannes Lions 2026 hub. Throughout the week I'll be meeting with retail,
+          commerce, marketing, media and technology leaders to discuss the future of leadership,
+          community, AI, customer experience and brand growth.
+        </p>
+        <p class="welcome__lead">If you'd like to connect, schedule time below.</p>
+        <div class="section__foot">
+          <!-- REPLACE with Calendly link -->
+          <a href="https://www.socialexec.co/contact" class="btn btn--primary">Schedule a Meeting</a>
         </div>
       </div>
     </section>
 
-    <!-- ============================ CANNES SCHEDULE ============================ -->
+    <!-- ============================ 2 &#xB7; SCHEDULE TIME ============================ -->
     <section class="section section--alt" id="schedule" aria-labelledby="schedule-h">
       <div class="container">
-        <h2 class="section__title" id="schedule-h">&#x1F4C5; Cannes Availability</h2>
-        <p class="section__sub">Tap a day to see where I'll be. Reach out to find a window that works.</p>
+        <h2 class="section__title" id="schedule-h">&#x1F5D3;&#xFE0F; Schedule Time</h2>
+        <p class="section__sub">Pick a conversation that fits &#x2014; book a time that works for you.</p>
 
-        <div class="accordion" data-accordion>
-          <div class="accordion__item">
-            <button class="accordion__head" aria-expanded="false">
-              <span class="accordion__day">Sunday</span>
-              <span class="accordion__teaser">Arrival</span>
-              <span class="accordion__chev" aria-hidden="true"></span>
-            </button>
-            <div class="accordion__panel">
-              <ul class="taglist">
-                <li>Arrival</li>
-                <li>Terre Blanche</li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="accordion__item">
-            <button class="accordion__head" aria-expanded="false">
-              <span class="accordion__day">Monday</span>
-              <span class="accordion__teaser">Partner activations</span>
-              <span class="accordion__chev" aria-hidden="true"></span>
-            </button>
-            <div class="accordion__panel">
-              <ul class="taglist">
-                <li>Brand Innovators</li>
-                <li>Canva</li>
-                <li>TikTok</li>
-                <li>Female Quotient</li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="accordion__item">
-            <button class="accordion__head" aria-expanded="false">
-              <span class="accordion__day">Tuesday</span>
-              <span class="accordion__teaser">Executive Meetings</span>
-              <span class="accordion__chev" aria-hidden="true"></span>
-            </button>
-            <div class="accordion__panel">
-              <ul class="taglist"><li>Executive Meetings</li></ul>
-            </div>
-          </div>
-
-          <div class="accordion__item">
-            <button class="accordion__head" aria-expanded="false">
-              <span class="accordion__day">Wednesday</span>
-              <span class="accordion__teaser">Retail &amp; Commerce Meetings</span>
-              <span class="accordion__chev" aria-hidden="true"></span>
-            </button>
-            <div class="accordion__panel">
-              <ul class="taglist"><li>Retail &amp; Commerce Meetings</li></ul>
-            </div>
-          </div>
-
-          <div class="accordion__item">
-            <button class="accordion__head" aria-expanded="false">
-              <span class="accordion__day">Thursday</span>
-              <span class="accordion__teaser">Sponsor Meetings</span>
-              <span class="accordion__chev" aria-hidden="true"></span>
-            </button>
-            <div class="accordion__panel">
-              <ul class="taglist"><li>Sponsor Meetings</li></ul>
-            </div>
-          </div>
-
-          <div class="accordion__item">
-            <button class="accordion__head" aria-expanded="false">
-              <span class="accordion__day">Friday</span>
-              <span class="accordion__teaser">Wrap-up Meetings</span>
-              <span class="accordion__chev" aria-hidden="true"></span>
-            </button>
-            <div class="accordion__panel">
-              <ul class="taglist"><li>Wrap-up Meetings</li></ul>
-            </div>
-          </div>
-        </div>
-
-        <div class="section__foot">
-          <a href="https://www.socialexec.co/contact" class="btn btn--primary btn--sm">Book a time during Cannes</a>
+        <div class="cta-grid">
+          <!-- REPLACE each href with the matching Calendly event link -->
+          <a class="cta-card" href="https://www.socialexec.co/contact">
+            <span class="cta-card__icon">&#x2615;</span>
+            <span class="cta-card__title">Coffee Meeting</span>
+            <span class="cta-card__desc">A quick intro &amp; connect &#xB7; 15 min</span>
+            <span class="cta-card__arrow" aria-hidden="true">&#x2192;</span>
+          </a>
+          <a class="cta-card" href="https://www.socialexec.co/partnerships">
+            <span class="cta-card__icon">&#x1F91D;</span>
+            <span class="cta-card__title">Partnership Meeting</span>
+            <span class="cta-card__desc">Explore working together &#xB7; 30 min</span>
+            <span class="cta-card__arrow" aria-hidden="true">&#x2192;</span>
+          </a>
+          <a class="cta-card" href="https://www.socialexec.co/community/join">
+            <span class="cta-card__icon">&#x1FAAA;</span>
+            <span class="cta-card__title">SEN Membership</span>
+            <span class="cta-card__desc">Discuss joining the community &#xB7; 30 min</span>
+            <span class="cta-card__arrow" aria-hidden="true">&#x2192;</span>
+          </a>
+          <a class="cta-card" href="https://www.socialexec.co/partnerships">
+            <span class="cta-card__icon">&#x1F4A1;</span>
+            <span class="cta-card__title">Sponsor Discussion</span>
+            <span class="cta-card__desc">Sponsorship &amp; activations &#xB7; 45 min</span>
+            <span class="cta-card__arrow" aria-hidden="true">&#x2192;</span>
+          </a>
         </div>
       </div>
     </section>
 
-    <!-- ============================ SEN QUICK LINKS ============================ -->
-    <section class="section" id="links" aria-labelledby="links-h">
+    <!-- ============================ 3 &#xB7; ABOUT SEN ============================ -->
+    <section class="section" id="about" aria-labelledby="about-h">
       <div class="container">
-        <h2 class="section__title" id="links-h">SEN Quick Links</h2>
-        <p class="section__sub">Explore the Social Executive Network ecosystem.</p>
-
-        <div class="link-grid">
-          <!-- REPLACE: SEN website URL -->
-          <a class="link-pill" href="https://www.socialexec.co/">&#x1F310; <span>SEN Website</span></a>
-          <!-- REPLACE: LinkedIn profile URL -->
-          <a class="link-pill" href="https://www.linkedin.com/company/social-executive-network">&#x1F4BC; <span>LinkedIn Profile</span></a>
-          <!-- SEN events calendar (Luma) -->
-          <a class="link-pill" href="https://lu.ma/user/usr-DiixCjgDptClJHI" target="_blank" rel="noopener">&#x1F4C5; <span>Events Calendar</span></a>
-          <!-- Add when available: Instagram &#xB7; Newsletter &#xB7; LinkedIn Legends &#xB7; Women in Leadership &#xB7; Retail AI Council -->
-          <a class="link-pill" href="https://www.socialexec.co/about" target="_blank" rel="noopener">&#x2139;&#xFE0F; <span>About SEN</span></a>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============================ CURRENT OPPORTUNITIES ============================ -->
-    <section class="section section--alt" id="opportunities" aria-labelledby="opps-h">
-      <div class="container">
-        <h2 class="section__title" id="opps-h">Current Opportunities</h2>
-        <p class="section__sub">Who I'm looking to meet &#x2014; and who I love to introduce.</p>
+        <h2 class="section__title" id="about-h">About SEN</h2>
+        <p class="section__sub">
+          The Social Executive Network is an executive community connecting senior leaders through
+          curated experiences, leadership conversations, and trusted relationships.
+        </p>
 
         <div class="two-col">
           <article class="panel">
-            <h3 class="panel__title">&#x1F50E; Looking For</h3>
+            <h3 class="panel__title">&#x1F465; Who We Connect</h3>
             <ul class="checklist">
-              <li>Retail Executives</li>
-              <li>Sponsors</li>
-              <li>Media Partners</li>
-              <li>Technology Partners</li>
-              <li>Speakers</li>
+              <li>CEOs</li>
+              <li>CMOs</li>
+              <li>CIOs</li>
+              <li>Retail Leaders</li>
+              <li>Commerce Leaders</li>
+              <li>Technology Executives</li>
             </ul>
+          </article>
+          <article class="panel">
+            <h3 class="panel__title">&#x2728; SEN Programs</h3>
+            <ul class="checklist">
+              <li>Executive Dinners</li>
+              <li>Retail Legends</li>
+              <li>LinkedIn Legends</li>
+              <li>Leadership Interviews</li>
+              <li>Private Experiences</li>
+              <li>Executive Retreats</li>
+            </ul>
+          </article>
+        </div>
+        <div class="section__foot">
+          <a href="https://www.socialexec.co/" class="btn btn--ghost btn--sm">Visit socialexec.co</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ 4 &#xB7; UPCOMING EVENTS ============================ -->
+    <section class="section section--alt" id="events" aria-labelledby="events-h">
+      <div class="container">
+        <h2 class="section__title" id="events-h">Upcoming SEN Events</h2>
+        <p class="section__sub">Where the community gathers next.</p>
+
+        <div class="two-col">
+          <article class="panel panel--event">
+            <span class="event__date">September 15, 2026 &#xB7; New York City</span>
+            <h3 class="panel__title">Retail Legends NYC</h3>
+            <p class="event__body">
+              An intimate evening with two of retail's most respected leaders,
+              <strong>Terry Lundgren</strong> &amp; <strong>Lew Frankfort</strong>.
+            </p>
+            <!-- REPLACE with Retail Legends invite/registration link if available -->
+            <a class="event__link" href="https://www.socialexec.co/contact">Request invitation &#x2192;</a>
           </article>
 
+          <article class="panel panel--event">
+            <span class="event__date">September 23&#x2013;25, 2026 &#xB7; London</span>
+            <h3 class="panel__title">eCommerce Expo London</h3>
+            <p class="event__body">
+              SEN executive programming across women in leadership, retail innovation, creator
+              marketing, and executive breakfasts &amp; dinners.
+            </p>
+            <a class="event__link" href="https://lu.ma/user/usr-DiixCjgDptClJHI" target="_blank" rel="noopener">View on Luma &#x2192;</a>
+          </article>
+        </div>
+
+        <div class="panel panel--wide">
+          <h3 class="panel__title">&#x1F399;&#xFE0F; LinkedIn Legends &#x2014; Executive Interview Series</h3>
+          <p class="event__body">Featuring senior leaders from across the industry:</p>
+          <ul class="taglist taglist--wrap">
+            <li>Retail</li>
+            <li>Marketing</li>
+            <li>Technology</li>
+            <li>Consumer Brands</li>
+          </ul>
+        </div>
+
+        <div class="section__foot">
+          <a href="https://lu.ma/user/usr-DiixCjgDptClJHI" class="btn btn--primary btn--sm" target="_blank" rel="noopener">See all SEN events</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ 5 &#xB7; CANNES MEETINGS ============================ -->
+    <section class="section" id="meetings" aria-labelledby="meetings-h">
+      <div class="container">
+        <h2 class="section__title" id="meetings-h">Who I'm Meeting at Cannes</h2>
+        <p class="section__sub">If you lead in any of these areas, let's connect.</p>
+
+        <div class="quad-grid">
           <article class="panel">
-            <h3 class="panel__title">&#x1F91D; Introducing</h3>
+            <h3 class="panel__title">&#x1F6CD;&#xFE0F; Retail</h3>
             <ul class="checklist">
-              <li>Retail Leaders</li>
-              <li>eCommerce Leaders</li>
-              <li>Marketing Leaders</li>
-              <li>AI &amp; Technology Leaders</li>
+              <li>Retail CEOs</li>
+              <li>Digital Leaders</li>
+              <li>Commerce Leaders</li>
             </ul>
           </article>
+          <article class="panel">
+            <h3 class="panel__title">&#x2728; Brands</h3>
+            <ul class="checklist">
+              <li>CMOs</li>
+              <li>Growth Leaders</li>
+              <li>Customer Experience Leaders</li>
+            </ul>
+          </article>
+          <article class="panel">
+            <h3 class="panel__title">&#x1F916; Technology</h3>
+            <ul class="checklist">
+              <li>AI Companies</li>
+              <li>Retail Tech</li>
+              <li>Commerce Platforms</li>
+            </ul>
+          </article>
+          <article class="panel">
+            <h3 class="panel__title">&#x1F4E3; Media</h3>
+            <ul class="checklist">
+              <li>Podcasts</li>
+              <li>Newsletters</li>
+              <li>Industry Publications</li>
+            </ul>
+          </article>
+        </div>
+        <p class="meetings__note">
+          Have a Cannes Lions pass? You can also find &amp; message me through the official
+          <strong>Cannes Lions app</strong>.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============================ 6 &#xB7; PARTNERSHIPS ============================ -->
+    <section class="section section--alt" id="partnerships" aria-labelledby="partner-h">
+      <div class="container">
+        <h2 class="section__title" id="partner-h">Partner With SEN</h2>
+        <p class="section__sub">Reach senior decision-makers through curated experiences, content, and community.</p>
+
+        <div class="two-col">
+          <article class="panel">
+            <h3 class="panel__title">&#x1F3AF; Ideal Partners</h3>
+            <ul class="checklist">
+              <li>AI Platforms</li>
+              <li>Retail Technology</li>
+              <li>Commerce Platforms</li>
+              <li>Consulting Firms</li>
+              <li>Agencies</li>
+              <li>Research Firms</li>
+            </ul>
+          </article>
+          <article class="panel">
+            <h3 class="panel__title">&#x1F4E6; Partnership Opportunities</h3>
+            <ul class="checklist">
+              <li>Event Sponsorship</li>
+              <li>Content Sponsorship</li>
+              <li>Executive Dinners</li>
+              <li>Thought Leadership</li>
+              <li>Community Programs</li>
+            </ul>
+          </article>
+        </div>
+        <div class="section__foot">
+          <a href="https://www.socialexec.co/partnerships" class="btn btn--primary">Explore Partnerships</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ 7 &#xB7; FOLLOW SEN ============================ -->
+    <section class="section" id="follow" aria-labelledby="follow-h">
+      <div class="container">
+        <h2 class="section__title" id="follow-h">Follow SEN</h2>
+        <p class="section__sub">Stay connected with the Social Executive Network.</p>
+
+        <div class="link-grid">
+          <a class="link-pill" href="https://www.linkedin.com/company/social-executive-network" target="_blank" rel="noopener">&#x1F4BC; <span>LinkedIn Company Page</span></a>
+          <a class="link-pill" href="https://www.socialexec.co/" target="_blank" rel="noopener">&#x1F310; <span>SEN Website</span></a>
+          <a class="link-pill" href="https://lu.ma/user/usr-DiixCjgDptClJHI" target="_blank" rel="noopener">&#x1F4C5; <span>SEN Events (Luma)</span></a>
+          <!-- REPLACE href with newsletter signup URL -->
+          <a class="link-pill link-pill--soon" href="https://www.socialexec.co/">&#x1F48C; <span>Newsletter</span><em>soon</em></a>
+          <!-- REPLACE href with Instagram URL -->
+          <a class="link-pill link-pill--soon" href="https://www.socialexec.co/">&#x1F4F8; <span>Instagram</span><em>soon</em></a>
+          <!-- REPLACE href with YouTube / Podcast URL -->
+          <a class="link-pill link-pill--soon" href="https://www.socialexec.co/">&#x1F3A7; <span>YouTube / Podcast</span><em>soon</em></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ 8 &#xB7; CANNES CONTENT FEED ============================ -->
+    <section class="section section--alt" id="feed" aria-labelledby="feed-h">
+      <div class="container">
+        <h2 class="section__title" id="feed-h">This Week at Cannes</h2>
+        <p class="section__sub">Daily insights from the ground &#x2014; follow along on LinkedIn.</p>
+
+        <div class="feed-grid">
+          <div class="feed-card"><span class="feed-card__day">Day 1</span><span class="feed-card__topic">What I'm seeing at Cannes</span></div>
+          <div class="feed-card"><span class="feed-card__day">Day 2</span><span class="feed-card__topic">Top executive insights</span></div>
+          <div class="feed-card"><span class="feed-card__day">Day 3</span><span class="feed-card__topic">AI trends</span></div>
+          <div class="feed-card"><span class="feed-card__day">Day 4</span><span class="feed-card__topic">Leadership lessons</span></div>
+          <div class="feed-card"><span class="feed-card__day">Day 5</span><span class="feed-card__topic">Biggest takeaways</span></div>
+        </div>
+        <div class="section__foot">
+          <a href="https://www.linkedin.com/company/social-executive-network" class="btn btn--ghost btn--sm" target="_blank" rel="noopener">Follow on LinkedIn</a>
         </div>
       </div>
     </section>
 
     <!-- ============================ QR CODE ============================ -->
-    <section class="section section--alt" id="qr" aria-labelledby="qr-h">
+    <section class="section" id="qr" aria-labelledby="qr-h">
       <div class="container">
         <div class="qr">
           <div class="qr__code">
-            <!-- Live QR &#x2014; points to the published hub. Regenerate if the URL changes. -->
             <img class="qr__img" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MDAiIGhlaWdodD0iNjAwIiB2aWV3Qm94PSIwIDAgMzMgMzMiIHNoYXBlLXJlbmRlcmluZz0iY3Jpc3BFZGdlcyI+PHBhdGggZmlsbD0iI2ZmZmZmZiIgZD0iTTAgMGgzM3YzM0gweiIvPjxwYXRoIHN0cm9rZT0iIzE5MTkyNCIgZD0iTTIgMi41aDdtMiAwaDFtMSAwaDFtMyAwaDJtMiAwaDFtMiAwaDdNMiAzLjVoMW01IDBoMW00IDBoMm00IDBoMW00IDBoMW01IDBoMU0yIDQuNWgxbTEgMGgzbTEgMGgxbTEgMGg1bTEgMGgxbTEgMGgxbTEgMGgybTIgMGgxbTEgMGgzbTEgMGgxTTIgNS41aDFtMSAwaDNtMSAwaDFtMSAwaDFtMSAwaDJtNSAwaDJtMSAwaDFtMSAwaDFtMSAwaDNtMSAwaDFNMiA2LjVoMW0xIDBoM20xIDBoMW0xIDBoMW0xIDBoMW0xIDBoNG0xIDBoM20yIDBoMW0xIDBoM20xIDBoMU0yIDcuNWgxbTUgMGgxbTEgMGgxbTQgMGg1bTQgMGgxbTUgMGgxTTIgOC41aDdtMSAwaDFtMSAwaDFtMSAwaDFtMSAwaDFtMSAwaDFtMSAwaDFtMSAwaDFtMSAwaDdNMTAgOS41aDFtMSAwaDFtMSAwaDJtMiAwaDFtMSAwaDFNMiAxMC41aDFtMSAwaDVtNCAwaDJtMSAwaDFtMiAwaDFtMiAwaDFtMSAwaDVNNCAxMS41aDNtMiAwaDFtMTEgMGgxbTEgMGg0bTMgMGgxTTIgMTIuNWgybTIgMGgxbTEgMGgxbTggMGgxbTEgMGgxbTMgMGgxbTEgMGgyTTIgMTMuNWgybTEgMGgzbTUgMGgybTEgMGgybTIgMGgybTIgMGgybTEgMGgxbTEgMGgxTTIgMTQuNWgzbTMgMGgxbTEgMGgxbTYgMGgzbTIgMGgxbTQgMGgyTTMgMTUuNWgxbTEgMGgxbTcgMGgxbTEgMGgybTEgMGgxbTEgMGgybTEgMGgybTEgMGgxbTMgMGgxTTIgMTYuNWgybTIgMGgzbTEgMGgxbTQgMGgzbTQgMGgybTMgMGgyTTMgMTcuNWgxbTEgMGgzbTEgMGgxbTUgMGgxbTEgMGgxbTQgMGgxbTIgMGgxbTMgMGgxTTIgMTguNWgybTEgMGgxbTEgMGgybTEgMGgybTEgMGgxbTIgMGg0bTEgMGgxbTUgMGgyTTIgMTkuNWgxbTIgMGgzbTEgMGgybTEgMGgybTQgMGgxbTIgMGgxbTEgMGg0bTEgMGgxbTEgMGgxTTIgMjAuNWgxbTEgMGg2bTEgMGgxbTEgMGgxbTMgMGg0bTEgMGgxbTEgMGgzbTEgMGgxTTIgMjEuNWgxbTQgMGgxbTIgMGgxbTIgMGgybTEgMGgybTIgMGgybTEgMGg0bTIgMGgxTTIgMjIuNWgxbTIgMGgxbTEgMGgzbTMgMGgxbTMgMGgxbTEgMGgxbTIgMGg1bTEgMGgzTTEwIDIzLjVoN20xIDBoMW0xIDBoM20zIDBoNU0yIDI0LjVoN20yIDBoM20xIDBoM20xIDBoNG0xIDBoMW0xIDBoM00yIDI1LjVoMW01IDBoMW0xIDBoMW00IDBoMW0yIDBoMW0yIDBoMm0zIDBoMW0zIDBoMU0yIDI2LjVoMW0xIDBoM20xIDBoMW0xIDBoMm0xIDBoMm0xIDBoMW0yIDBoMW0yIDBoNW0xIDBoMk0yIDI3LjVoMW0xIDBoM20xIDBoMW0xIDBoMW05IDBoMm01IDBoNE0yIDI4LjVoMW0xIDBoM20xIDBoMW0xIDBoMW0xIDBoM20xIDBoMm0zIDBoMW0xIDBoN00yIDI5LjVoMW01IDBoMW0yIDBoMm00IDBoMm0zIDBoMW0xIDBoMm0xIDBoMW0xIDBoMU0yIDMwLjVoN20xIDBoMm0xIDBoM20zIDBoMW0xIDBoMW0xIDBoMm0xIDBoMyIvPjwvc3ZnPgo=" width="210" height="210"
                  alt="QR code linking to the SEN Cannes 2026 hub" />
           </div>
           <div class="qr__body">
             <h2 class="section__title section__title--left" id="qr-h">Scan to open the hub</h2>
             <p class="section__sub section__sub--left">
-              This code links straight to the live hub. Put it everywhere you meet people:
+              This code links straight to this hub. Put it everywhere you meet people:
             </p>
             <ul class="taglist taglist--wrap">
               <li>LinkedIn featured section</li>
               <li>Email signature</li>
               <li>Business cards</li>
+              <li>Phone wallpaper</li>
               <li>Event badges</li>
-              <li>WhatsApp status</li>
             </ul>
             <p class="qr__hint">
               <strong>Live hub:</strong> <code>sen-cannes-2026.vercel.app</code>.
@@ -981,12 +1121,14 @@ h1, h2, h3, h4 { margin: 0; line-height: 1.15; }
         <a href="https://www.socialexec.co/" target="_blank" rel="noopener">SEN Website</a>
         <a href="https://www.linkedin.com/company/social-executive-network" target="_blank" rel="noopener">LinkedIn</a>
         <a href="https://lu.ma/user/usr-DiixCjgDptClJHI" target="_blank" rel="noopener">Events Calendar</a>
+        <a href="https://www.socialexec.co/about" target="_blank" rel="noopener">About SEN</a>
       </div>
 
       <div class="footer__col">
         <h4>During Cannes</h4>
-        <a href="https://www.socialexec.co/contact">Book a Meeting</a>
-        <a href="#schedule">My Availability</a>
+        <!-- REPLACE with Calendly link -->
+        <a href="https://www.socialexec.co/contact" target="_blank" rel="noopener">Schedule a Meeting</a>
+        <a href="https://www.socialexec.co/partnerships" target="_blank" rel="noopener">Partner With SEN</a>
         <a href="mailto:partnerships@socialexecutivenetwork.com">Partnerships</a>
       </div>
     </div>
@@ -996,9 +1138,7 @@ h1, h2, h3, h4 { margin: 0; line-height: 1.15; }
     </div>
   </footer>
 
-  <!-- Back to top -->
   <a href="#top" class="totop" id="toTop" aria-label="Back to top">&#x2191;</a>
-
   <script>
 /* ============================================================
    SEN Cannes 2026 Hub &#x2014; script.js
