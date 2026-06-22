@@ -887,6 +887,15 @@ h1, h2, h3, h4 { margin: 0; line-height: 1.15; }
 .closing__quote { font-family: var(--font-serif); font-weight: 500; font-style: italic; font-size: clamp(1.6rem, 6vw, 2.4rem); color: var(--offwhite); margin: 0 0 18px; text-shadow: 0 2px 20px rgba(0,0,0,.4); }
 .closing__msg { max-width: 480px; margin: 0 auto 28px; color: rgba(246,241,234,.82); font-size: 1.05rem; }
 
+/* Trust Index CTA band (SEN x Liftoff) */
+.trust {
+  background: radial-gradient(120% 120% at 50% 0%, var(--navy-soft) 0%, var(--navy) 70%);
+  color: var(--offwhite); text-align: center; padding: 56px 0;
+}
+.trust__eyebrow { display: inline-block; font-size: .76rem; letter-spacing: .12em; text-transform: uppercase; color: var(--terracotta); font-weight: 700; margin: 0 0 12px; }
+.trust__title { font-family: var(--font-serif); font-weight: 600; font-size: clamp(1.7rem, 5.5vw, 2.4rem); color: var(--offwhite); margin: 0 0 14px; }
+.trust__line { max-width: 540px; margin: 0 auto 26px; color: rgba(246,241,234,.84); font-size: 1.05rem; }
+
 /* Minimal footer */
 .footer--min { background: var(--navy); padding: 40px 0; text-align: center; }
 .footer__min-inner { display: grid; justify-items: center; gap: 8px; }
@@ -967,8 +976,7 @@ h1, h2, h3, h4 { margin: 0; line-height: 1.15; }
             <span class="row__text"><strong>Join SEN</strong><span>Become part of the executive community</span></span>
             <span class="row__arrow" aria-hidden="true">&#x2192;</span>
           </a>
-          <!-- REPLACE href with Retail Women in Tech page when available -->
-          <a class="row" href="https://www.socialexec.co/" target="_blank" rel="noopener">
+          <a class="row" href="https://retailwomenintech.org/" target="_blank" rel="noopener">
             <span class="row__icon">&#x1F469;&#x200D;&#x1F4BB;</span>
             <span class="row__text"><strong>Retail Women in Tech</strong><span>A community for women leading retail &amp; technology</span></span>
             <span class="row__arrow" aria-hidden="true">&#x2192;</span>
@@ -989,6 +997,16 @@ h1, h2, h3, h4 { margin: 0; line-height: 1.15; }
             <span class="row__arrow" aria-hidden="true">&#x2192;</span>
           </a>
         </div>
+      </div>
+    </section>
+
+    <!-- TRUST INDEX (SEN &#xD7; Liftoff) ======================================== -->
+    <section class="trust" id="trust">
+      <div class="container container--narrow">
+        <span class="trust__eyebrow">In partnership with Liftoff</span>
+        <h2 class="trust__title">The Trust Index</h2>
+        <p class="trust__line">Measure how your brand earns trust and authority in the AI era &#x2014; the Trust Index from Liftoff, SEN's media partner.</p>
+        <a href="https://www.liftoffcompany.com/the-liftoff-trust-index/" target="_blank" rel="noopener" class="btn btn--primary">Take the Trust Index</a>
       </div>
     </section>
 
