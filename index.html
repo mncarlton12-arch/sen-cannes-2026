@@ -780,7 +780,7 @@ h1, h2, h3, h4 { margin: 0; line-height: 1.15; }
   z-index: 1;
 }
 .intro__inner { position: relative; z-index: 2; }
-.intro__logo { height: 48px; width: auto; margin: 0 auto 20px; filter: drop-shadow(0 3px 12px rgba(0,0,0,.4)); }
+.intro__logo { height: 70px; width: auto; margin: 0 auto 14px; filter: drop-shadow(0 4px 16px rgba(0,0,0,.45)); }
 .intro__photo {
   width: 132px; height: 132px; margin: 0 auto 18px;
   border-radius: 50%;
@@ -797,6 +797,45 @@ h1, h2, h3, h4 { margin: 0; line-height: 1.15; }
 .intro__line { max-width: 460px; margin: 0 auto 28px; font-size: 1.05rem; color: rgba(246,241,234,.86); }
 .intro__cta { display: flex; flex-direction: column; gap: 12px; max-width: 340px; margin: 0 auto; }
 .intro__cta .btn { width: 100%; }
+.intro__brand {
+  font-family: var(--font-serif); font-weight: 600;
+  font-size: clamp(1.85rem, 6.6vw, 2.8rem); letter-spacing: -.01em;
+  color: var(--offwhite); margin: 0 0 8px;
+  text-shadow: 0 2px 18px rgba(25,25,36,.55);
+}
+.intro__cannes {
+  font-size: .82rem; letter-spacing: .1em; text-transform: uppercase;
+  color: var(--terracotta); font-weight: 600; margin: 0 0 16px;
+}
+.intro__rep {
+  display: inline-flex; align-items: center; gap: 12px;
+  margin: 28px auto 0;
+  background: rgba(246,241,234,.07);
+  border: 1px solid rgba(246,241,234,.16);
+  border-radius: 999px; padding: 7px 18px 7px 7px;
+}
+.intro__rep-avatar {
+  width: 46px; height: 46px; flex-shrink: 0;
+  border-radius: 50%; border: 2px solid var(--terracotta);
+  background: var(--navy-soft); overflow: hidden;
+  display: flex; align-items: center; justify-content: center;
+}
+.intro__rep-img { width: 100%; height: 100%; object-fit: cover; }
+.intro__rep-mono { font-family: var(--font-serif); font-weight: 600; font-size: 1.05rem; color: var(--offwhite); }
+.intro__rep-text { display: flex; flex-direction: column; text-align: left; line-height: 1.25; }
+.intro__rep-name { color: var(--offwhite); font-weight: 600; font-size: .95rem; }
+.intro__rep-role { color: rgba(246,241,234,.66); font-size: .78rem; }
+
+/* Meet Brittany photo */
+.meet__photo {
+  width: 108px; height: 108px; margin: 0 auto 18px;
+  border-radius: 50%; border: 3px solid var(--terracotta);
+  background: var(--navy-soft); overflow: hidden;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 10px 28px rgba(25,25,36,.18);
+}
+.meet__photo-img { width: 100%; height: 100%; object-fit: cover; }
+.meet__photo-mono { font-family: var(--font-serif); font-weight: 600; font-size: 2.1rem; color: var(--offwhite); }
 
 /* Meet Brittany */
 .meet { text-align: center; }
@@ -882,21 +921,26 @@ h1, h2, h3, h4 { margin: 0; line-height: 1.15; }
       <div class="intro__bg" aria-hidden="true"></div>
       <div class="intro__scrim" aria-hidden="true"></div>
       <div class="container intro__inner">
-        <img class="intro__logo" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjY1IiBoZWlnaHQ9IjYyMCIgdmlld0JveD0iMCAwIDY2NSA2MjAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTUwLjUwMSAxMDAuNjU3QzE3MC4wNTEgMTAwLjY1NyAxODUuODI5IDEwMy4wNTkgMTk3LjgzMyAxMDcuODZDMjA5LjgzNyAxMTIuNjYyIDIxOS4yNjkgMTE4LjY2NSAyMjYuMTI5IDEyNS44NjdDMjMyLjk4OCAxMzIuNzI3IDIzNy43OSAxMzkuOTI5IDI0MC41MzQgMTQ3LjQ3NUMyNDMuNjIxIDE1NC42NzcgMjQ1LjY3OSAxNjAuODUxIDI0Ni43MDggMTY1Ljk5NkMyNDguMDggMTcxLjgyNyAyNDYuMzY1IDE3Ni45NzIgMjQxLjU2NCAxODEuNDMxQzIzNi43NjIgMTg1LjU0NiAyMzEuMTAzIDE4Ni45MTkgMjI0LjU4NiAxODUuNTQ3QzIyNC4yNDMgMTg1LjU0NyAyMjQuMDcxIDE4My44MzEgMjI0LjA3MSAxODAuNDAxQzIyNC4wNzEgMTc2LjYyOSAyMjMuMzg2IDE3MS45OTggMjIyLjAxNCAxNjYuNTExQzIyMC45ODUgMTYxLjAyMyAyMTkuMDk4IDE1NS4wMjEgMjE2LjM1NSAxNDguNTA0QzIxMy42MTEgMTQxLjk4NyAyMDkuNDk1IDEzNS45ODUgMjA0LjAwNyAxMzAuNDk3QzE5OC44NjIgMTI1LjAwOSAxOTEuODMxIDEyMC41NTEgMTgyLjkxMyAxMTcuMTIxQzE3My45OTUgMTEzLjM0OCAxNjIuODQ4IDExMS40NjIgMTQ5LjQ3MiAxMTEuNDYyQzEzNy44MSAxMTEuNDYyIDEyNy44NjMgMTEzLjE3NyAxMTkuNjMyIDExNi42MDZDMTExLjQgMTIwLjAzNiAxMDQuODg0IDEyNC42NjYgMTAwLjA4MiAxMzAuNDk3Qzk1LjI4MDMgMTM1Ljk4NSA5Mi4wMjE2IDE0Mi41MDIgOTAuMzA2NyAxNTAuMDQ4Qzg4LjkzNDggMTU3LjU5MyA4OS4yNzgyIDE2NS42NTMgOTEuMzM2IDE3NC4yMjhDOTMuNzM2OSAxODUuNTQ2IDk5LjU2NzYgMTk1LjE1IDEwOC44MjggMjAzLjAzOUMxMTguMDg5IDIxMC41ODUgMTI4Ljg5MyAyMTcuNDQ0IDE0MS4yNCAyMjMuNjE4QzE1My41ODggMjI5LjQ0OSAxNjYuNjIxIDIzNS4xMDggMTgwLjM0MSAyNDAuNTk2QzE5NC4wNiAyNDYuMDgzIDIwNi41NzkgMjUyLjQyOSAyMTcuODk3IDI1OS42MzJDMjI5LjU1OSAyNjYuNDkyIDIzOS4xNjIgMjc1LjA2NiAyNDYuNzA4IDI4NS4zNTVDMjUwLjc5IDI5MC43MzYgMjUzLjc2NiAyOTYuODIgMjU1LjY0IDMwMy42MDZWMjE0LjIwMkgzNzYuNDc1VjIyNi4wMzVIMjU4LjIxMkMyNjguNTAxIDIyNi43MjEgMjc3LjI0OCAyMzAuODM3IDI4NC40NSAyMzguMzgzQzI5MS42NTMgMjQ1LjU4NSAyOTUuMjU0IDI1NC4zMzIgMjk1LjI1NCAyNjQuNjIxVjM1NS4xNjlIMzc0LjU2NFYzNjcuMDAySDI1OC4yMTJDMjY4LjUwMSAzNjcuMzQ1IDI3Ny4yNDggMzcxLjI4OSAyODQuNDUgMzc4LjgzNUMyOTEuNjUzIDM4Ni4wMzggMjk1LjI1NCAzOTQuNzg1IDI5NS4yNTQgNDA1LjA3NFY1MDguNDg0SDQwOC4yNjNWMjgxLjg0M0g0MzIuNDQzQzQ1Ny44MjQgMzExLjY4MyA0ODIuMzQ4IDM0MC42NjUgNTA2LjAxNCAzNjguNzlDNTE2LjMwMyAzODAuNzk0IDUyNi43NjUgMzkzLjE0MiA1MzcuMzk4IDQwNS44MzJDNTQ4LjM3MyA0MTguNTIyIDU1OS4wMDUgNDMxLjA0MSA1NjkuMjk1IDQ0My4zODlDNTc5LjU4NCA0NTUuNzM2IDU4OS4zNiA0NjcuNTY5IDU5OC42MiA0NzguODg4QzYwOC4yMjQgNDg5Ljg2MyA2MTYuNjI3IDQ5OS44MSA2MjMuODMgNTA4LjcyOEM2MzIuNzQ4IDUxOS4zNiA2MzkuNjA3IDUzMS4xOTMgNjQ0LjQwOSA1NDQuMjI3QzY0OS41NTQgNTU3LjI2IDY1Mi40NjkgNTcwLjgwOCA2NTMuMTU1IDU4NC44N1YyODEuODQzSDY2NC45ODhWNTg3Ljk1N0g2NDAuODA4QzYxNS4wODQgNTU3LjQzMSA1OTAuMjE3IDUyNy45MzUgNTY2LjIwOCA0OTkuNDY3QzU1NS45MTkgNDg3LjExOSA1NDUuMjg2IDQ3NC42MDEgNTM0LjMxMSA0NjEuOTFDNTIzLjY3OCA0NDguODc3IDUxMy4wNDYgNDM2LjE4NiA1MDIuNDEzIDQyMy44MzlDNDkyLjEyNCA0MTEuMTQ4IDQ4Mi4xNzcgMzk5LjMxNSA0NzIuNTczIDM4OC4zNEM0NjMuMzEzIDM3Ny4wMjEgNDU1LjA4MSAzNjcuMDc1IDQ0Ny44NzggMzU4LjVDNDMwLjM4NiAzMzcuMjM1IDQyMS4xMjUgMzEzLjA1NSA0MjAuMDk2IDI4NS45NTlWNTc4LjE5MUM0MjAuMTA3IDU3OC4xODYgNDIwLjExOSA1NzguMTgxIDQyMC4xMyA1NzguMTc2VjU5NC4zMjZDNDE2LjE3IDU5Ni4wNDUgNDEyLjE4IDU5Ny42NzYgNDA4LjE2MyA1OTkuMjE4VjU4My4zNjZDNDA4LjE5NiA1ODMuMzUzIDQwOC4yMjkgNTgzLjMzOSA0MDguMjYzIDU4My4zMjVWNTIwLjMxN0gyNTUuNjRWMzQxLjUxN0MyNTQuNDY3IDM0Ni4yNiAyNTIuODYzIDM1MS4wMzQgMjUwLjgyNCAzNTUuODM5QzI0Ni4zNjUgMzY2LjgxNCAyMzkuNjc3IDM3Ni43NjEgMjMwLjc2IDM4NS42NzlDMjIxLjg0MiAzOTQuNTk2IDIxMC44NjYgNDAxLjk3IDE5Ny44MzMgNDA3LjgwMUMxODQuOCA0MTMuMjg5IDE2OS43MDggNDE2LjAzMyAxNTIuNTU5IDQxNi4wMzNDMTM0LjM4IDQxNi4wMzMgMTE4LjYwMyA0MTMuOTc1IDEwNS4yMjcgNDA5Ljg1OUM5Mi4xOTMzIDQwNS40MDEgODEuMDQ2NyA0MDAuMDg0IDcxLjc4NjIgMzkzLjkxQzYyLjg2ODYgMzg3LjczNiA1NS42NjU1IDM4MS4yMiA1MC4xNzc4IDM3NC4zNkM0NC42OSAzNjcuMTU4IDQwLjc0NTcgMzYwLjgxMiAzOC4zNDQ4IDM1NS4zMjRDMzcuMzE1OSAzNTIuOTIzIDM2Ljk3MjUgMzUwLjM1MSAzNy4zMTU1IDM0Ny42MDdDMzguMDAxNCAzNDQuODY0IDM5LjAzMDQgMzQyLjI5MSA0MC40MDI0IDMzOS44OUM0Mi4xMTczIDMzNy4xNDYgNDQuMzQ3IDMzNS4wODggNDcuMDkwOSAzMzMuNzE2QzQ5LjgzNDcgMzMyLjAwMSA1My4wOTM1IDMzMS4zMTUgNTYuODY2MiAzMzEuNjU4QzU5LjYxMDEgMzQ1LjM3OCA2NC45MjU4IDM1Ny43MjYgNzIuODE0NSAzNjguNzAxQzc5LjMzMTIgMzc3Ljk2MiA4OC43NjM5IDM4Ni41MzYgMTAxLjExMSAzOTQuNDI1QzExMy40NTkgNDAxLjk3IDEyOS45MjIgNDA1Ljc0MyAxNTAuNTAxIDQwNS43NDNDMTYyLjg0OCA0MDUuNzQzIDE3My44MjQgNDAzLjUxMyAxODMuNDI4IDM5OS4wNTVDMTkzLjM3NCAzOTQuMjUzIDIwMS40MzUgMzg4LjA4IDIwNy42MDggMzgwLjUzNEMyMTMuNzgyIDM3Mi45ODggMjE3LjcyNyAzNjQuNTg1IDIxOS40NDEgMzU1LjMyNEMyMjEuNDk5IDM0NS43MjEgMjIwLjk4NCAzMzYuMTE3IDIxNy44OTcgMzI2LjUxNEMyMTQuODExIDMxNi41NjcgMjA4LjQ2NiAzMDguMTYzIDE5OC44NjIgMzAxLjMwNEMxODkuMjU5IDI5NC40NDQgMTc4LjExMSAyODguMDk5IDE2NS40MjEgMjgyLjI2OUMxNTMuMDczIDI3Ni40MzggMTQwLjA0IDI3MC42MDcgMTI2LjMyIDI2NC43NzZDMTEyLjk0NCAyNTguOTQ2IDEwMC40MjUgMjUyLjI1OCA4OC43NjM3IDI0NC43MTJDNzcuNDQ1MiAyMzYuODIzIDY4LjAxMjUgMjI3LjczNCA2MC40NjY4IDIxNy40NDRDNTMuNjQ1NiAyMDcuNyA1MC4wNTY2IDE5NS44MDEgNDkuNjk1MyAxODEuNzVDMjcuODczIDIyMS43MTYgMTUuNzgyNSAyNjYuNTczIDE0LjgwNjcgMzEyLjY0M0MxMy40MjkgMzc3LjY5IDM0LjI5MTMgNDQxLjI2IDczLjk0NDQgNDkyLjg0MkMxMTMuNTk4IDU0NC40MjQgMTY5LjY2NyA1ODAuOTMgMjMyLjg4MiA1OTYuMzIyQzI4NC4xMTcgNjA4Ljc5OCAzMzcuNTYgNjA2Ljc5NyAzODcuMzUgNTkwLjkwOFY2MDYuMzQ1QzMzNi4yNzQgNjIxLjc2OSAyODEuNzM5IDYyMy4zOTEgMjI5LjM5NSA2MTAuNjQ2QzE2Mi45MTggNTk0LjQ1OSAxMDMuOTU2IDU1Ni4wNyA2Mi4yNTY5IDUwMS44MjdDMjAuNTU3OSA0NDcuNTg0IC0xLjM4MTM4IDM4MC43MzQgMC4wNjc0MTg0IDMxMi4zM0MxLjQwNjg3IDI0OS4wOTQgMjIuNjU5MyAxODguMDMxIDYwLjU5MTggMTM3Ljc0NEM2My4xNjU5IDEzNC4zMzIgNjUuMDQ2MyAxMzEuODc0IDY2LjY3ODcgMTMwLjMyMUM2OS44Mjk4IDEyNi44MyA3My40MTkgMTIzLjYzIDc3LjQ0NTQgMTIwLjcyMkM5NS45NjY1IDEwNy4zNDUgMTIwLjMxOSAxMDAuNjU3IDE1MC41MDEgMTAwLjY1N1pNNTU2Ljc0MyAxNTYuOTYyQzU3OC4yOTUgMTU2Ljk2MiA1OTUuNzY3IDE3NC40MzMgNTk1Ljc2OCAxOTUuOTg1QzU5NS43NjggMjE3LjUzOCA1NzguMjk1IDIzNS4wMSA1NTYuNzQzIDIzNS4wMUM1MzUuMTkxIDIzNS4wMSA1MTcuNzIgMjE3LjUzNyA1MTcuNzIgMTk1Ljk4NUM1MTcuNzIgMTc0LjQzNCA1MzUuMTkxIDE1Ni45NjIgNTU2Ljc0MyAxNTYuOTYyWk00NDkuMjEyIDQ0LjIyNzVDNDYzLjU4IDQ0LjIyNzUgNDc1LjIyOCA1NS44NzUgNDc1LjIyOCA3MC4yNDMyQzQ3NS4yMjcgODQuNjExMiA0NjMuNTggOTYuMjU4OCA0NDkuMjEyIDk2LjI1ODhDNDM0Ljg0NCA5Ni4yNTg3IDQyMy4xOTYgODQuNjExMiA0MjMuMTk2IDcwLjI0MzJDNDIzLjE5NiA1NS44NzUxIDQzNC44NDQgNDQuMjI3NiA0NDkuMjEyIDQ0LjIyNzVaTTMxNi45NzkgMEMzMjYuMzE4IDAgMzMzLjg4OSA3LjU3MDkyIDMzMy44ODkgMTYuOTEwMkMzMzMuODg5IDI2LjI0OTQgMzI2LjMxOCAzMy44MjAzIDMxNi45NzkgMzMuODIwM0MzMDcuNjM5IDMzLjgyMDEgMzAwLjA2OCAyNi4yNDkzIDMwMC4wNjggMTYuOTEwMkMzMDAuMDY4IDcuNTcxMDQgMzA3LjYzOSAwLjAwMDE5NDgzMSAzMTYuOTc5IDBaIiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4K" alt="Social Executive Network" width="58" height="54" />
-
-        <div class="intro__photo">
-          <!-- REPLACE: add Brittany's headshot as brittany.jpg, then swap the monogram below for:
-               <img class="intro__photo-img" src="brittany.jpg" alt="Brittany Baumgarten" /> -->
-          <span class="intro__mono" aria-hidden="true">BB</span>
-        </div>
-
-        <h1 class="intro__name">Brittany Baumgarten</h1>
-        <p class="intro__role">Founder &amp; CEO &#xB7; Social Executive Network</p>
+        <img class="intro__logo" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjY1IiBoZWlnaHQ9IjYyMCIgdmlld0JveD0iMCAwIDY2NSA2MjAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTUwLjUwMSAxMDAuNjU3QzE3MC4wNTEgMTAwLjY1NyAxODUuODI5IDEwMy4wNTkgMTk3LjgzMyAxMDcuODZDMjA5LjgzNyAxMTIuNjYyIDIxOS4yNjkgMTE4LjY2NSAyMjYuMTI5IDEyNS44NjdDMjMyLjk4OCAxMzIuNzI3IDIzNy43OSAxMzkuOTI5IDI0MC41MzQgMTQ3LjQ3NUMyNDMuNjIxIDE1NC42NzcgMjQ1LjY3OSAxNjAuODUxIDI0Ni43MDggMTY1Ljk5NkMyNDguMDggMTcxLjgyNyAyNDYuMzY1IDE3Ni45NzIgMjQxLjU2NCAxODEuNDMxQzIzNi43NjIgMTg1LjU0NiAyMzEuMTAzIDE4Ni45MTkgMjI0LjU4NiAxODUuNTQ3QzIyNC4yNDMgMTg1LjU0NyAyMjQuMDcxIDE4My44MzEgMjI0LjA3MSAxODAuNDAxQzIyNC4wNzEgMTc2LjYyOSAyMjMuMzg2IDE3MS45OTggMjIyLjAxNCAxNjYuNTExQzIyMC45ODUgMTYxLjAyMyAyMTkuMDk4IDE1NS4wMjEgMjE2LjM1NSAxNDguNTA0QzIxMy42MTEgMTQxLjk4NyAyMDkuNDk1IDEzNS45ODUgMjA0LjAwNyAxMzAuNDk3QzE5OC44NjIgMTI1LjAwOSAxOTEuODMxIDEyMC41NTEgMTgyLjkxMyAxMTcuMTIxQzE3My45OTUgMTEzLjM0OCAxNjIuODQ4IDExMS40NjIgMTQ5LjQ3MiAxMTEuNDYyQzEzNy44MSAxMTEuNDYyIDEyNy44NjMgMTEzLjE3NyAxMTkuNjMyIDExNi42MDZDMTExLjQgMTIwLjAzNiAxMDQuODg0IDEyNC42NjYgMTAwLjA4MiAxMzAuNDk3Qzk1LjI4MDMgMTM1Ljk4NSA5Mi4wMjE2IDE0Mi41MDIgOTAuMzA2NyAxNTAuMDQ4Qzg4LjkzNDggMTU3LjU5MyA4OS4yNzgyIDE2NS42NTMgOTEuMzM2IDE3NC4yMjhDOTMuNzM2OSAxODUuNTQ2IDk5LjU2NzYgMTk1LjE1IDEwOC44MjggMjAzLjAzOUMxMTguMDg5IDIxMC41ODUgMTI4Ljg5MyAyMTcuNDQ0IDE0MS4yNCAyMjMuNjE4QzE1My41ODggMjI5LjQ0OSAxNjYuNjIxIDIzNS4xMDggMTgwLjM0MSAyNDAuNTk2QzE5NC4wNiAyNDYuMDgzIDIwNi41NzkgMjUyLjQyOSAyMTcuODk3IDI1OS42MzJDMjI5LjU1OSAyNjYuNDkyIDIzOS4xNjIgMjc1LjA2NiAyNDYuNzA4IDI4NS4zNTVDMjUwLjc5IDI5MC43MzYgMjUzLjc2NiAyOTYuODIgMjU1LjY0IDMwMy42MDZWMjE0LjIwMkgzNzYuNDc1VjIyNi4wMzVIMjU4LjIxMkMyNjguNTAxIDIyNi43MjEgMjc3LjI0OCAyMzAuODM3IDI4NC40NSAyMzguMzgzQzI5MS42NTMgMjQ1LjU4NSAyOTUuMjU0IDI1NC4zMzIgMjk1LjI1NCAyNjQuNjIxVjM1NS4xNjlIMzc0LjU2NFYzNjcuMDAySDI1OC4yMTJDMjY4LjUwMSAzNjcuMzQ1IDI3Ny4yNDggMzcxLjI4OSAyODQuNDUgMzc4LjgzNUMyOTEuNjUzIDM4Ni4wMzggMjk1LjI1NCAzOTQuNzg1IDI5NS4yNTQgNDA1LjA3NFY1MDguNDg0SDQwOC4yNjNWMjgxLjg0M0g0MzIuNDQzQzQ1Ny44MjQgMzExLjY4MyA0ODIuMzQ4IDM0MC42NjUgNTA2LjAxNCAzNjguNzlDNTE2LjMwMyAzODAuNzk0IDUyNi43NjUgMzkzLjE0MiA1MzcuMzk4IDQwNS44MzJDNTQ4LjM3MyA0MTguNTIyIDU1OS4wMDUgNDMxLjA0MSA1NjkuMjk1IDQ0My4zODlDNTc5LjU4NCA0NTUuNzM2IDU4OS4zNiA0NjcuNTY5IDU5OC42MiA0NzguODg4QzYwOC4yMjQgNDg5Ljg2MyA2MTYuNjI3IDQ5OS44MSA2MjMuODMgNTA4LjcyOEM2MzIuNzQ4IDUxOS4zNiA2MzkuNjA3IDUzMS4xOTMgNjQ0LjQwOSA1NDQuMjI3QzY0OS41NTQgNTU3LjI2IDY1Mi40NjkgNTcwLjgwOCA2NTMuMTU1IDU4NC44N1YyODEuODQzSDY2NC45ODhWNTg3Ljk1N0g2NDAuODA4QzYxNS4wODQgNTU3LjQzMSA1OTAuMjE3IDUyNy45MzUgNTY2LjIwOCA0OTkuNDY3QzU1NS45MTkgNDg3LjExOSA1NDUuMjg2IDQ3NC42MDEgNTM0LjMxMSA0NjEuOTFDNTIzLjY3OCA0NDguODc3IDUxMy4wNDYgNDM2LjE4NiA1MDIuNDEzIDQyMy44MzlDNDkyLjEyNCA0MTEuMTQ4IDQ4Mi4xNzcgMzk5LjMxNSA0NzIuNTczIDM4OC4zNEM0NjMuMzEzIDM3Ny4wMjEgNDU1LjA4MSAzNjcuMDc1IDQ0Ny44NzggMzU4LjVDNDMwLjM4NiAzMzcuMjM1IDQyMS4xMjUgMzEzLjA1NSA0MjAuMDk2IDI4NS45NTlWNTc4LjE5MUM0MjAuMTA3IDU3OC4xODYgNDIwLjExOSA1NzguMTgxIDQyMC4xMyA1NzguMTc2VjU5NC4zMjZDNDE2LjE3IDU5Ni4wNDUgNDEyLjE4IDU5Ny42NzYgNDA4LjE2MyA1OTkuMjE4VjU4My4zNjZDNDA4LjE5NiA1ODMuMzUzIDQwOC4yMjkgNTgzLjMzOSA0MDguMjYzIDU4My4zMjVWNTIwLjMxN0gyNTUuNjRWMzQxLjUxN0MyNTQuNDY3IDM0Ni4yNiAyNTIuODYzIDM1MS4wMzQgMjUwLjgyNCAzNTUuODM5QzI0Ni4zNjUgMzY2LjgxNCAyMzkuNjc3IDM3Ni43NjEgMjMwLjc2IDM4NS42NzlDMjIxLjg0MiAzOTQuNTk2IDIxMC44NjYgNDAxLjk3IDE5Ny44MzMgNDA3LjgwMUMxODQuOCA0MTMuMjg5IDE2OS43MDggNDE2LjAzMyAxNTIuNTU5IDQxNi4wMzNDMTM0LjM4IDQxNi4wMzMgMTE4LjYwMyA0MTMuOTc1IDEwNS4yMjcgNDA5Ljg1OUM5Mi4xOTMzIDQwNS40MDEgODEuMDQ2NyA0MDAuMDg0IDcxLjc4NjIgMzkzLjkxQzYyLjg2ODYgMzg3LjczNiA1NS42NjU1IDM4MS4yMiA1MC4xNzc4IDM3NC4zNkM0NC42OSAzNjcuMTU4IDQwLjc0NTcgMzYwLjgxMiAzOC4zNDQ4IDM1NS4zMjRDMzcuMzE1OSAzNTIuOTIzIDM2Ljk3MjUgMzUwLjM1MSAzNy4zMTU1IDM0Ny42MDdDMzguMDAxNCAzNDQuODY0IDM5LjAzMDQgMzQyLjI5MSA0MC40MDI0IDMzOS44OUM0Mi4xMTczIDMzNy4xNDYgNDQuMzQ3IDMzNS4wODggNDcuMDkwOSAzMzMuNzE2QzQ5LjgzNDcgMzMyLjAwMSA1My4wOTM1IDMzMS4zMTUgNTYuODY2MiAzMzEuNjU4QzU5LjYxMDEgMzQ1LjM3OCA2NC45MjU4IDM1Ny43MjYgNzIuODE0NSAzNjguNzAxQzc5LjMzMTIgMzc3Ljk2MiA4OC43NjM5IDM4Ni41MzYgMTAxLjExMSAzOTQuNDI1QzExMy40NTkgNDAxLjk3IDEyOS45MjIgNDA1Ljc0MyAxNTAuNTAxIDQwNS43NDNDMTYyLjg0OCA0MDUuNzQzIDE3My44MjQgNDAzLjUxMyAxODMuNDI4IDM5OS4wNTVDMTkzLjM3NCAzOTQuMjUzIDIwMS40MzUgMzg4LjA4IDIwNy42MDggMzgwLjUzNEMyMTMuNzgyIDM3Mi45ODggMjE3LjcyNyAzNjQuNTg1IDIxOS40NDEgMzU1LjMyNEMyMjEuNDk5IDM0NS43MjEgMjIwLjk4NCAzMzYuMTE3IDIxNy44OTcgMzI2LjUxNEMyMTQuODExIDMxNi41NjcgMjA4LjQ2NiAzMDguMTYzIDE5OC44NjIgMzAxLjMwNEMxODkuMjU5IDI5NC40NDQgMTc4LjExMSAyODguMDk5IDE2NS40MjEgMjgyLjI2OUMxNTMuMDczIDI3Ni40MzggMTQwLjA0IDI3MC42MDcgMTI2LjMyIDI2NC43NzZDMTEyLjk0NCAyNTguOTQ2IDEwMC40MjUgMjUyLjI1OCA4OC43NjM3IDI0NC43MTJDNzcuNDQ1MiAyMzYuODIzIDY4LjAxMjUgMjI3LjczNCA2MC40NjY4IDIxNy40NDRDNTMuNjQ1NiAyMDcuNyA1MC4wNTY2IDE5NS44MDEgNDkuNjk1MyAxODEuNzVDMjcuODczIDIyMS43MTYgMTUuNzgyNSAyNjYuNTczIDE0LjgwNjcgMzEyLjY0M0MxMy40MjkgMzc3LjY5IDM0LjI5MTMgNDQxLjI2IDczLjk0NDQgNDkyLjg0MkMxMTMuNTk4IDU0NC40MjQgMTY5LjY2NyA1ODAuOTMgMjMyLjg4MiA1OTYuMzIyQzI4NC4xMTcgNjA4Ljc5OCAzMzcuNTYgNjA2Ljc5NyAzODcuMzUgNTkwLjkwOFY2MDYuMzQ1QzMzNi4yNzQgNjIxLjc2OSAyODEuNzM5IDYyMy4zOTEgMjI5LjM5NSA2MTAuNjQ2QzE2Mi45MTggNTk0LjQ1OSAxMDMuOTU2IDU1Ni4wNyA2Mi4yNTY5IDUwMS44MjdDMjAuNTU3OSA0NDcuNTg0IC0xLjM4MTM4IDM4MC43MzQgMC4wNjc0MTg0IDMxMi4zM0MxLjQwNjg3IDI0OS4wOTQgMjIuNjU5MyAxODguMDMxIDYwLjU5MTggMTM3Ljc0NEM2My4xNjU5IDEzNC4zMzIgNjUuMDQ2MyAxMzEuODc0IDY2LjY3ODcgMTMwLjMyMUM2OS44Mjk4IDEyNi44MyA3My40MTkgMTIzLjYzIDc3LjQ0NTQgMTIwLjcyMkM5NS45NjY1IDEwNy4zNDUgMTIwLjMxOSAxMDAuNjU3IDE1MC41MDEgMTAwLjY1N1pNNTU2Ljc0MyAxNTYuOTYyQzU3OC4yOTUgMTU2Ljk2MiA1OTUuNzY3IDE3NC40MzMgNTk1Ljc2OCAxOTUuOTg1QzU5NS43NjggMjE3LjUzOCA1NzguMjk1IDIzNS4wMSA1NTYuNzQzIDIzNS4wMUM1MzUuMTkxIDIzNS4wMSA1MTcuNzIgMjE3LjUzNyA1MTcuNzIgMTk1Ljk4NUM1MTcuNzIgMTc0LjQzNCA1MzUuMTkxIDE1Ni45NjIgNTU2Ljc0MyAxNTYuOTYyWk00NDkuMjEyIDQ0LjIyNzVDNDYzLjU4IDQ0LjIyNzUgNDc1LjIyOCA1NS44NzUgNDc1LjIyOCA3MC4yNDMyQzQ3NS4yMjcgODQuNjExMiA0NjMuNTggOTYuMjU4OCA0NDkuMjEyIDk2LjI1ODhDNDM0Ljg0NCA5Ni4yNTg3IDQyMy4xOTYgODQuNjExMiA0MjMuMTk2IDcwLjI0MzJDNDIzLjE5NiA1NS44NzUxIDQzNC44NDQgNDQuMjI3NiA0NDkuMjEyIDQ0LjIyNzVaTTMxNi45NzkgMEMzMjYuMzE4IDAgMzMzLjg4OSA3LjU3MDkyIDMzMy44ODkgMTYuOTEwMkMzMzMuODg5IDI2LjI0OTQgMzI2LjMxOCAzMy44MjAzIDMxNi45NzkgMzMuODIwM0MzMDcuNjM5IDMzLjgyMDEgMzAwLjA2OCAyNi4yNDkzIDMwMC4wNjggMTYuOTEwMkMzMDAuMDY4IDcuNTcxMDQgMzA3LjYzOSAwLjAwMDE5NDgzMSAzMTYuOTc5IDBaIiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4K" alt="" width="68" height="63" />
+        <h1 class="intro__brand">Social Executive Network</h1>
+        <p class="intro__cannes">Cannes Lions 2026 &#xB7; June 22&#x2013;26 &#xB7; C&#xF4;te d'Azur</p>
         <p class="intro__line">A curated network of senior retail, commerce, technology &amp; AI leaders who value real relationships.</p>
 
         <div class="intro__cta">
           <a href="https://cal.com/socialexec/meeting" target="_blank" rel="noopener" class="btn btn--primary">&#x1F5D3;&#xFE0F; Book a Meeting</a>
           <a href="https://www.linkedin.com/company/social-executive-network" target="_blank" rel="noopener" class="btn btn--ghost btn--ghost-light">&#x1F4BC; Connect on LinkedIn</a>
+        </div>
+
+        <!-- Brittany as representative / host (secondary) -->
+        <div class="intro__rep">
+          <span class="intro__rep-avatar">
+            <!-- REPLACE: Brittany's headshot -> <img class="intro__rep-img" src="brittany.jpg" alt="Brittany Baumgarten" /> -->
+            <span class="intro__rep-mono" aria-hidden="true">BB</span>
+          </span>
+          <span class="intro__rep-text">
+            <span class="intro__rep-name">Brittany Baumgarten</span>
+            <span class="intro__rep-role">Founder &amp; CEO &#xB7; Your host at Cannes</span>
+          </span>
         </div>
       </div>
     </section>
@@ -904,6 +948,10 @@ h1, h2, h3, h4 { margin: 0; line-height: 1.15; }
     <!-- 2 &#xB7; MEET BRITTANY ==================================================== -->
     <section class="section section--tight" id="meet" aria-labelledby="meet-h">
       <div class="container container--narrow meet">
+        <div class="meet__photo">
+          <!-- REPLACE: <img class="meet__photo-img" src="brittany.jpg" alt="Brittany Baumgarten" /> -->
+          <span class="meet__photo-mono" aria-hidden="true">BB</span>
+        </div>
         <h2 class="section__title" id="meet-h">Meet Brittany</h2>
         <p>I'm Brittany Baumgarten, founder of the Social Executive Network. After years building executive communities, I learned the most valuable moments don't happen on stage &#x2014; they happen in the room afterward.</p>
         <p>I created SEN to design those rooms on purpose: senior retail, commerce, technology and AI leaders who value meaningful relationships, thoughtful conversation, and high-quality introductions.</p>
