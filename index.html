@@ -852,6 +852,8 @@ h1, h2, h3, h4 { margin: 0; line-height: 1.15; }
   transition: transform .15s, box-shadow .2s, border-color .2s;
 }
 .row:hover { transform: translateY(-2px); box-shadow: var(--shadow); border-color: var(--terracotta); }
+.row--static { cursor: default; }
+.row--static:hover { transform: none; box-shadow: var(--shadow-sm); border-color: rgba(25,25,36,.1); }
 .row__icon { font-size: 1.4rem; flex-shrink: 0; }
 .row__text { display: flex; flex-direction: column; gap: 2px; flex: 1; }
 .row__text strong { font-family: var(--font-serif); font-weight: 600; font-size: 1.08rem; color: var(--navy); }
@@ -981,16 +983,15 @@ h1, h2, h3, h4 { margin: 0; line-height: 1.15; }
             <span class="row__text"><strong>Retail Women in Tech</strong><span>A community for women leading retail &amp; technology</span></span>
             <span class="row__arrow" aria-hidden="true">&#x2192;</span>
           </a>
-          <a class="row" href="https://www.linkedin.com/company/social-executive-network" target="_blank" rel="noopener">
+          <a class="row" href="https://www.liftoffcompany.com/liftoff-spotlight/" target="_blank" rel="noopener">
             <span class="row__icon">&#x1F399;&#xFE0F;</span>
-            <span class="row__text"><strong>Executive Interview Series</strong><span>Conversations with senior leaders</span></span>
+            <span class="row__text"><strong>Executive Interview Series</strong><span>Liftoff Spotlight &#x2014; conversations with senior leaders</span></span>
             <span class="row__arrow" aria-hidden="true">&#x2192;</span>
           </a>
-          <a class="row" href="https://www.socialexec.co/contact" target="_blank" rel="noopener">
+          <div class="row row--static">
             <span class="row__icon">&#x1F3DB;&#xFE0F;</span>
             <span class="row__text"><strong>Retail Legends</strong><span>An intimate evening with retail's icons</span></span>
-            <span class="row__arrow" aria-hidden="true">&#x2192;</span>
-          </a>
+          </div>
           <a class="row" href="https://www.socialexec.co/partnerships" target="_blank" rel="noopener">
             <span class="row__icon">&#x1F4A1;</span>
             <span class="row__text"><strong>Partnership Opportunities</strong><span>Partner with SEN</span></span>
