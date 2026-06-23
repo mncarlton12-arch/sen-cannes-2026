@@ -886,6 +886,7 @@ h1, h2, h3, h4 { margin: 0; line-height: 1.15; }
 
 /* Upcoming events &#x2014; simple rows */
 .events { border: 1px solid rgba(25,25,36,.1); border-radius: var(--radius-sm); overflow: hidden; background: var(--white); box-shadow: var(--shadow-sm); }
+.ev.ev--feature{background:rgba(184,115,80,.08);border:1px solid rgba(184,115,80,.4);border-radius:12px;margin:8px 0;padding:14px 18px;flex-wrap:wrap;gap:10px;transition:background .15s ease,transform .15s ease}.ev.ev--feature:hover{background:rgba(184,115,80,.16);transform:translateY(-1px)}.ev__right{display:flex;align-items:center;gap:14px;flex-wrap:wrap}.ev__cta{display:inline-flex;align-items:center;gap:.35em;font-size:.78rem;font-weight:700;letter-spacing:.02em;color:#fff;background:#b87350;padding:.45em .95em;border-radius:999px;white-space:nowrap} 
 .ev { display: flex; justify-content: space-between; align-items: baseline; gap: 14px; padding: 15px 20px; border-bottom: 1px solid rgba(25,25,36,.08); }
 .ev:last-child { border-bottom: 0; }
 .ev__name { font-family: var(--font-serif); font-weight: 600; font-size: 1.05rem; color: var(--navy); }
@@ -1027,7 +1028,7 @@ h1, h2, h3, h4 { margin: 0; line-height: 1.15; }
       <div class="container container--mid">
         <h2 class="section__title" id="events-h">Upcoming Events</h2>
         <div class="events">
-          <div class="ev"><span class="ev__name">Retail Legends</span><span class="ev__when">Sep 15 &#xB7; New York City</span></div>
+          <a class="ev ev--feature" href="https://luma.com/96gvc9ig" target="_blank" rel="noopener"><span class="ev__name">Retail Legends</span><span class="ev__right"><span class="ev__when">Sep 15 &#xB7; New York City</span><span class="ev__cta">Request Invite &#x2192;</span></span></a>
           <div class="ev"><span class="ev__name">eCommerce Expo London</span><span class="ev__when">Sep 23&#x2013;25 &#xB7; London</span></div>
           <div class="ev"><span class="ev__name">Executive Dinners</span><span class="ev__when">Year-round</span></div>
           <div class="ev"><span class="ev__name">Leadership Experiences</span><span class="ev__when">By invitation</span></div>
